@@ -21,4 +21,7 @@ public class HomeController extends Controller {
         return ok(index.render("Your new application is ready."));
     }
 
+    public Result about(){
+        return ok(about.render("Simple Bootstrap Test", "2.5.0"));
+    }
 }
