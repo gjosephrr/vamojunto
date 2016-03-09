@@ -1,21 +1,25 @@
-@*
- * This template takes a single argument, a String containing a
- * message to display.
- *@
-@(message: String)
+@main("VamoJunto!"){
 
-@*
- * Call the the `main` template with two arguments. The first
- * argument is a `String` with the title of the page, the second
- * argument is an `Html` object containing the body of the page.
- *@
-@main("Welcome to Play") {
+    <div class="container-fluid column">
+        <form class="form-signin">
+            <h2>Bem vindo à VamoJunto! Faça login</h2>
+            <input type="number" id="input-id" class="form-control" placeholder="Matrícula" required autofocus>
+            <input type="password" id="input-password" class="form-control" placeholder="Senha" required>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
 
-    @*
-     * Get an `Html` object by calling the built-in Play welcome
-     * template and passing a `String` message.
-     *@
-    @play20.welcome(message, style = "Java")
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Entre</button>
 
+        </form>
+        <div>
+            <form action="/register">
+                <input type="submit" class="btn btn-lg btn-block btn-primary" value="Cadastre-se">
+            </form>
+        </div>
+
+    </div>
 
 }

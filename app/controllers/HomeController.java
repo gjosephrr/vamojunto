@@ -18,7 +18,18 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok(index.render("Your new application is ready."));
+        return ok(index.render());
     }
 
+    public Result about(){
+        return ok(about.render("Simple Bootstrap Test", "2.5.0"));
+    }
+
+    public Result aboutPlay() {
+        return ok(about_play.render("Your new application is ready."));
+    }
+
+    public Result register(){
+        return ok(register.render());
+    }
 }
