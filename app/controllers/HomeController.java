@@ -28,4 +28,8 @@ public class HomeController extends Controller {
     public Result aboutPlay() {
         return ok(about_play.render("Your new application is ready."));
     }
+
+    public Result register(){
+        return ok(register.render());
+    }
 }

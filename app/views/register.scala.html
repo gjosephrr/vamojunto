@@ -1,0 +1,78 @@
+@main("Cadastre-se") {
+
+    <div class="text-center">
+        <h2>Quem é você?</h2>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 column">
+                <div class="container position">
+                    <a href="#" role="button"
+                        class="btn btn-lg btn-primary" data-toggle="modal"
+                        data-target="#registrationDriverModal">
+                        Motorista
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 column">
+                <div class="container position">
+                    <a href="#" role="button"
+                        class="btn btn-lg btn-primary" data-toggle="modal"
+                        data-target="#registrationHichhikerModal">
+                        Caronista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registrationDriverModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h3>Olá motorista! :D</h3>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <input type="number" id="input-id" class="form-control" placeholder="Matrícula" required autofocus>
+                        <input type="password" id="input-password" class="form-control" placeholder="Senha" required>
+                        <input type="password" if="confirm-password" class="form-control" placeholder="Digite sua senha novamente" required>
+                        <br/>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Entre</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registrationHichhikerModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h3>Olá caronista! :D</h3>
+                </div>
+
+                <div class="modal-body">
+                    <form>
+                        <input type="number" id="input-id" class="form-control" placeholder="Matrícula" required autofocus>
+                        <input type="password" id="input-password" class="form-control" placeholder="Senha" required>
+                        <input type="password" if="confirm-password" class="form-control" placeholder="Digite sua senha novamente" required>
+                        <br/>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Entre</button>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="@routes.Assets.versioned("bootstrap-3.3.6-dist/js/bootstrap.min.js")"></script>
+}

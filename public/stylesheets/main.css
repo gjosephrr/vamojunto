@@ -12,6 +12,14 @@ h2{
     text-align: center;
 }
 
-.container{
-    display: block-inline;
+.column{
+    height: 100vh;
+    background-color: #999999;
+}
+
+.position{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: auto;
 }

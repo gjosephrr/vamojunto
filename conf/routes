@@ -15,3 +15,5 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET     /about                      controllers.HomeController.about()
 
 GET     /about_play                 controllers.HomeController.aboutPlay()
+
+GET     /register                   controllers.HomeController.register()
