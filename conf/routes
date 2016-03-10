@@ -17,3 +17,5 @@ GET     /about                      controllers.HomeController.about()
 GET     /about_play                 controllers.HomeController.aboutPlay()
 
 GET     /register                   controllers.HomeController.register()
+
+GET     /driver_page                controllers.HomeController.driver()

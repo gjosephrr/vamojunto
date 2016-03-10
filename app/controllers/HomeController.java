@@ -32,4 +32,8 @@ public class HomeController extends Controller {
     public Result register(){
         return ok(register.render());
     }
+
+    public Result driver(){
+        return ok(driver.render());
+    }
 }

@@ -1,3 +1,8 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
 .form-signin{
     width: 400px;
     height: 150px;
@@ -14,7 +19,19 @@ h2{
 
 .column{
     height: 100vh;
-    background-color: #999999;
+    background-color: #3D3D3D;
+}
+
+.profile-picture{
+    height: 30%;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-info{
+    height: 70%;
+    padding: 0px;
+    margin: 0px;
 }
 
 .position{
@@ -22,4 +39,37 @@ h2{
     left: 50%;
     top: 50%;
     margin: auto;
+
+}
+
+.padding-none{
+    padding: 0%;
+}
+
+ol {
+    padding-left: 10px;
+    list-style-type: none;
+}
+
+ol li {
+    position: relative;
+    font: bold italic 45px/1.5 Helvetica, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+
+li p {
+    font: 12px/1.5 Helvetica, sans-serif;
+    padding-left: 60px;
+    color: #999D9D;
+}
+
+span {
+    position: absolute;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
 }
