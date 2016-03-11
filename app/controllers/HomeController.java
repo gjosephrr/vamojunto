@@ -33,8 +33,8 @@ public class HomeController extends Controller {
         return ok(register.render());
     }
 
-    public Result hichhiker(){
-       return ok(hichhiker.render());
+    public Result hitchhiker(){
+       return ok(hitchhiker.render());
    }
 
     public Result driver(){
