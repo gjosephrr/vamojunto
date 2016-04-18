@@ -1,43 +1,15 @@
 @main("VamoJunto!"){
 
-    <div class="container-fluid column">
-        <form class="form-signin">
-            <h2 style="color: white">Bem vindo à VamoJunto! Faça login</h2>
-            <input type="number" id="input-id" class="form-control" placeholder="Matrícula" required autofocus>
-            <input type="password" id="input-password" class="form-control" placeholder="Senha" required>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
+    <div class="login-page">
+        <h2>Bem vindo à VamoJunto!</h2>
+        <div class="form">
 
-            <!- Entrar na pagina driver-->
-            <script type="text/javascript">
-                    function driverPage()
-                    {
-                        location.href=" driver_page#"
-                    }
-            </script>
-            <input class="btn btn-lg btn-primary btn-block" type="button" value="Motorista" onClick="driverPage()">
-
-            <!- Entrar na pagina driver-->
-            <script type="text/javascript">
-                    function hitchhikerPage()
-                    {
-                        location.href=" hitchhiker_page#"
-                    }
-            </script>
-            <input class="btn btn-lg btn-primary btn-block" type="button" value="Caronista" onClick="hitchhikerPage()">
-            <!--<button class="btn btn-lg btn-primary btn-block" onClick="driverPage()" type="submit">Entre3</button>
-            -->
-
-        </form>
-        <div>
-            <form action="/register">
-                <input type="submit" class="btn btn-lg btn-block btn-primary" value="Cadastre-se">
+            <form class="login-form">
+                <input type="text" placeholder="Matrícula" required autofocus>
+                <input type="password" placeholder="Senha" required/>
+                <button>login</button>
+                <p class="message">Ainda não se cadastrou? <a href="/register">Crie uma conta!</a></p>
             </form>
         </div>
-
     </div>
-
 }
