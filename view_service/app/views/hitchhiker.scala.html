@@ -1,0 +1,98 @@
+@main("VamoJunto!"){
+
+    <!-- NOTE: This is only a first draft, a lot in this file will change, including the way we add the map -->
+    <div class="container-fluid">
+        <div class="row">
+
+                <!-- Left column -->
+            <div class="col-md-2 column" style="background-color:#99ccff;" style="padding: 0px">
+
+                    <!-- User profile picture -->
+                <div class="container-fluid profile-picture" style="padding: 0px">
+                    <img src="@routes.Assets.versioned("images/user.png")"
+                    class="img-circle img-responsive center-block"
+                    width="200" height="300"/>
+                </div>
+
+                    <!-- User rides -->
+                <div class="container-fluid profile-info" style="padding: 0px">
+                    <nav class="nav navbar-default">
+                        <div class="container" style="width: inherit">
+                            <p class="navbar-text center-text"><strong>Minhas caronas</strong></p>
+                        </div>
+                    </nav>
+
+                    <div>
+                        <ol>
+                            <li><span style="color: #0f0f0f;">1.</span>
+                                <p style="padding-top: 15px">
+                                    Você ainda não possui caronas cadastradas :/
+                                </p>
+                            </li>
+                            <li><span style="color: #0f0f0f;">2.</span>
+                                <p style="padding-top: 15px">
+                                    Você ainda não possui caronas cadastradas :/
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+
+                <!-- Right column -->
+            <div class="col-md-10 column container-fluid" style="padding: 0px; position: relative">
+
+                    <!-- Map -->
+                <div id="map" style="position: absolute;">
+
+                </div>
+
+                <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+                async defer></script>
+
+                <style>
+                #floating-list{
+                position: absolute;
+                margin-left: 80%;
+                top: 2%;
+                height: 250px;
+                width: 250px;
+                background-color: #EFEFEF;
+                }</style>
+
+                <div class="container-fluid" id="floating-list" style="padding: 0">
+                    <nav class="nav navbar-default">
+                        <div class="container-fluid" style="background-color:#99ccff;">
+                            <div class="navbar-header">
+                                <a href="#" class="navbar-brand">Notificações</a>
+                            </div>
+                        </div>
+                    </nav>
+                    <div>
+                        <ol>
+                            <li><span style="color: #0f0f0f;">1.</span>
+                                <p style="padding-top: 15px">
+                                    Você ainda não possui notificações :/
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <style>
+                #floating-button{
+                position: absolute;
+                margin-left: 80%;
+                top: 90%;
+                white-space: normal;
+                }
+                </style>
+                <div class="container-fluid" >
+                    <!-- <button type="button" id="floating-button" class="btn btn-primary btn-lg"><strong>Procurar Carona</strong></button> -->
+                    <button>Procurar carona</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
