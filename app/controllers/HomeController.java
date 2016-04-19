@@ -21,14 +21,6 @@ public class HomeController extends Controller {
         return ok(index.render());
     }
 
-    public Result about(){
-        return ok(about.render("Simple Bootstrap Test", "2.5.0"));
-    }
-
-    public Result aboutPlay() {
-        return ok(about_play.render("Your new application is ready."));
-    }
-
     public Result register(){
         return ok(register.render());
     }
