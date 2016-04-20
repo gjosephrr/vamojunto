@@ -12,6 +12,11 @@ public class UserDAO {
 
     public UserDAO(){
         usersDB = new ArrayList<User>();
+
+        User newUser = registerUser("biscoito", "biscoito@gmail.com", "424242",
+            "123", "123", "424242", "far away", "uma aí", 0);
+
+        usersDB.add(newUser);
     }
 
     public User registerUser(String name, String email,

@@ -2,6 +2,7 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
+import api_service.models.User;
 
 import views.html.*;
 
@@ -9,7 +10,9 @@ import views.html.*;
  * This controller contains an action to handle HTTP requests
  * to the application's home page.
  */
-public class HomeController extends Controller {
+public class ViewController extends Controller {
+
+    User activeUser = null;
 
     /**
      * An action that renders an HTML page with a welcome message.
@@ -25,11 +28,19 @@ public class HomeController extends Controller {
         return ok(register.render());
     }
 
-    public Result hitchhiker(){
-       return ok(hitchhiker.render());
-   }
+    public Result loginUser(){
+        activeUser = api_service.controllers.APIController.login();
 
-    public Result driver(){
-        return ok(driver.render());
+        if(activeUser != null){
+            return ok(main_page.render(activeUser));
+        }else{
+            return ok("A problem ocurred, try loggin in again");
+        }
+    }
+
+    public Result logout() {
+        activeUser = null;
+
+        return ok(index.render());
     }
 }

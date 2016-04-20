@@ -14,9 +14,4 @@ public class RideDAO {
         ridesDB = new ArrayList<Ride>();
     }
 
-
-
-
-
-
 }

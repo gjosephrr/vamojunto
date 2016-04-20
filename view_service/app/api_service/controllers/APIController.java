@@ -14,8 +14,7 @@ import play.data.Form;
  */
 public class APIController extends Controller{
 
-    UserDAO userDAO = new UserDAO();
-
+    static UserDAO userDAO = new UserDAO();
 
     public Result newUser(){
         DynamicForm dynamicForm = Form.form().bindFromRequest();
@@ -41,16 +40,14 @@ public class APIController extends Controller{
 
 
 
-    public Result login(){
+    public static User login(){
 
         DynamicForm dynamicForm = Form.form().bindFromRequest();
 
         String schoolId = dynamicForm.get("school_id");
         String password = dynamicForm.get("password");
 
-
-        return ok (userDAO.authenticateUser(schoolId,password).toString());
-
+        return userDAO.authenticateUser(schoolId,password);
 
     }
 }
