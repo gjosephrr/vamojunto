@@ -3,19 +3,19 @@
     <div class="login-page">
         <h2>Bem vindo à VamoJunto!</h2>
         <div class="form">
-            <form class="register-form">
-                <input type="text" placeholder="Nome" required autofocus>
-                <input type="email" placeholder="Email" required autofocus>
-                <input type="text" placeholder="Matrícula"/>
-                <input type="text" placeholder="Telefone"/>
-                <input type="password" placeholder="Senha"/>
-                <input type="password" placeholder="Repita sua senha"/>
+            <form class="register-form" action="/new_user" method="post">
+                <input name="name" type="text" placeholder="Nome" required autofocus>
+                <input name="email" type="email" placeholder="Email" required autofocus>
+                <input name="school_id" type="text" placeholder="Matrícula" required/>
+                <input name="phone_number" type="text" placeholder="Telefone" required/>
+                <input name="password" type="password" placeholder="Senha" required/>
+                <input name="password2" type="password" placeholder="Repita sua senha" required/>
 
                 <p class="message">Para motoristas:</p>
-                <input type="number" placeholder="Número de vagas no seu veículo" required autofocus>
-                <input type="text" placeholder="Bairro" required autofocus>
-                <input type="text" placeholder="Rua" required autofocus>
-                <button>Cadastrar</button>
+                <input name="vehicle_seats" type="number" value="0" placeholder="Número de vagas no seu veículo">
+                <input name="neighborhood" type="text" placeholder="Bairro" required autofocus>
+                <input name="street" type="text" placeholder="Rua" required autofocus>
+                <button type="submit">Cadastrar</button>
                 <p class="message">Já se cadastrou? <a href="/">Entrar</a></p>
             </form>
         </div>

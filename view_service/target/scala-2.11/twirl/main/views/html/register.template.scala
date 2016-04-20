@@ -34,19 +34,19 @@ Seq[Any](_display_(/*1.2*/main("Cadastre-se")/*1.21*/ {_display_(Seq[Any](format
     """),format.raw/*3.5*/("""<div class="login-page">
         <h2>Bem vindo à VamoJunto!</h2>
         <div class="form">
-            <form class="register-form">
-                <input type="text" placeholder="Nome" required autofocus>
-                <input type="email" placeholder="Email" required autofocus>
-                <input type="text" placeholder="Matrícula"/>
-                <input type="text" placeholder="Telefone"/>
-                <input type="password" placeholder="Senha"/>
-                <input type="password" placeholder="Repita sua senha"/>
+            <form class="register-form" action="/new_user" method="post">
+                <input name="name" type="text" placeholder="Nome" required autofocus>
+                <input name="email" type="email" placeholder="Email" required autofocus>
+                <input name="school_id" type="text" placeholder="Matrícula" required/>
+                <input name="phone_number" type="text" placeholder="Telefone" required/>
+                <input name="password" type="password" placeholder="Senha" required/>
+                <input name="password2" type="password" placeholder="Repita sua senha" required/>
 
                 <p class="message">Para motoristas:</p>
-                <input type="number" placeholder="Número de vagas no seu veículo" required autofocus>
-                <input type="text" placeholder="Bairro" required autofocus>
-                <input type="text" placeholder="Rua" required autofocus>
-                <button>Cadastrar</button>
+                <input name="vehicle_seats" type="number" value="0" placeholder="Número de vagas no seu veículo">
+                <input name="neighborhood" type="text" placeholder="Bairro" required autofocus>
+                <input name="street" type="text" placeholder="Rua" required autofocus>
+                <button type="submit">Cadastrar</button>
                 <p class="message">Já se cadastrou? <a href="/">Entrar</a></p>
             </form>
         </div>
@@ -71,9 +71,9 @@ Seq[Any](_display_(/*1.2*/main("Cadastre-se")/*1.21*/ {_display_(Seq[Any](format
 object register extends register_Scope0.register
               /*
                   -- GENERATED --
-                  DATE: Tue Apr 19 20:53:18 BRT 2016
+                  DATE: Wed Apr 20 00:55:56 BRT 2016
                   SOURCE: /home/js/workspace/VamoJunto!/vamojunto/view_service/app/views/register.scala.html
-                  HASH: c60e183720cfb2559e6a3913566ea1a9df2bedd8
+                  HASH: 9517d5229c4463d243c45b3a799c786f948087dd
                   MATRIX: 833->1|860->20|899->22|931->28
                   LINES: 32->1|32->1|32->1|34->3
                   -- GENERATED --

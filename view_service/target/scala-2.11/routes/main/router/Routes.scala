@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/js/workspace/VamoJunto!/vamojunto/view_service/conf/routes
-// @DATE:Tue Apr 19 20:41:31 BRT 2016
+// @DATE:Tue Apr 19 23:14:10 BRT 2016
 
 package router
 
@@ -17,25 +17,29 @@ import _root_.play.libs.F
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  HomeController_0: controllers.HomeController,
+  HomeController_1: controllers.HomeController,
   // @LINE:8
-  Assets_1: controllers.Assets,
+  Assets_2: controllers.Assets,
+  // @LINE:16
+  APIController_0: api_service.controllers.APIController,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    HomeController_0: controllers.HomeController,
+    HomeController_1: controllers.HomeController,
     // @LINE:8
-    Assets_1: controllers.Assets
-  ) = this(errorHandler, HomeController_0, Assets_1, "/")
+    Assets_2: controllers.Assets,
+    // @LINE:16
+    APIController_0: api_service.controllers.APIController
+  ) = this(errorHandler, HomeController_1, Assets_2, APIController_0, "/")
 
   import ReverseRouteContext.empty
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_0, Assets_1, prefix)
+    new Routes(errorHandler, HomeController_1, Assets_2, APIController_0, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -48,6 +52,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register""", """controllers.HomeController.register()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """driver_page""", """controllers.HomeController.driver()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """hitchhiker_page""", """controllers.HomeController.hitchhiker()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """new_user""", """api_service.controllers.APIController.newUser()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -60,7 +65,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_HomeController_index0_invoker = createInvoker(
-    HomeController_0.index(),
+    HomeController_1.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -77,7 +82,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
   private[this] lazy val controllers_Assets_versioned1_invoker = createInvoker(
-    Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
+    Assets_2.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -94,7 +99,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("register")))
   )
   private[this] lazy val controllers_HomeController_register2_invoker = createInvoker(
-    HomeController_0.register(),
+    HomeController_1.register(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -111,7 +116,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("driver_page")))
   )
   private[this] lazy val controllers_HomeController_driver3_invoker = createInvoker(
-    HomeController_0.driver(),
+    HomeController_1.driver(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -128,7 +133,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("hitchhiker_page")))
   )
   private[this] lazy val controllers_HomeController_hitchhiker4_invoker = createInvoker(
-    HomeController_0.hitchhiker(),
+    HomeController_1.hitchhiker(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
@@ -140,37 +145,60 @@ class Routes(
     )
   )
 
+  // @LINE:16
+  private[this] lazy val api_service_controllers_APIController_newUser5_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("new_user")))
+  )
+  private[this] lazy val api_service_controllers_APIController_newUser5_invoker = createInvoker(
+    APIController_0.newUser(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "api_service.controllers.APIController",
+      "newUser",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """new_user"""
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
     // @LINE:6
     case controllers_HomeController_index0_route(params) =>
       call { 
-        controllers_HomeController_index0_invoker.call(HomeController_0.index())
+        controllers_HomeController_index0_invoker.call(HomeController_1.index())
       }
   
     // @LINE:8
     case controllers_Assets_versioned1_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned1_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned1_invoker.call(Assets_2.versioned(path, file))
       }
   
     // @LINE:10
     case controllers_HomeController_register2_route(params) =>
       call { 
-        controllers_HomeController_register2_invoker.call(HomeController_0.register())
+        controllers_HomeController_register2_invoker.call(HomeController_1.register())
       }
   
     // @LINE:12
     case controllers_HomeController_driver3_route(params) =>
       call { 
-        controllers_HomeController_driver3_invoker.call(HomeController_0.driver())
+        controllers_HomeController_driver3_invoker.call(HomeController_1.driver())
       }
   
     // @LINE:14
     case controllers_HomeController_hitchhiker4_route(params) =>
       call { 
-        controllers_HomeController_hitchhiker4_invoker.call(HomeController_0.hitchhiker())
+        controllers_HomeController_hitchhiker4_invoker.call(HomeController_1.hitchhiker())
+      }
+  
+    // @LINE:16
+    case api_service_controllers_APIController_newUser5_route(params) =>
+      call { 
+        api_service_controllers_APIController_newUser5_invoker.call(APIController_0.newUser())
       }
   }
 }

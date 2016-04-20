@@ -12,3 +12,5 @@ GET     /register                   controllers.HomeController.register()
 GET     /driver_page                controllers.HomeController.driver()
 
 GET     /hitchhiker_page            controllers.HomeController.hitchhiker()
+
+POST    /new_user                   api_service.controllers.APIController.newUser()
