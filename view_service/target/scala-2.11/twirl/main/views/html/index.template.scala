@@ -32,7 +32,7 @@ class index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Forma
 Seq[Any](_display_(/*1.2*/main("VamoJunto!")/*1.20*/{_display_(Seq[Any](format.raw/*1.21*/("""
 
     """),format.raw/*3.5*/("""<div class="login-page">
-        <h2>Bem vindo à VamoJunto!</h2>
+        <h2>Bem vindo ao VamoJunto!</h2>
         <div class="form">
 
             <form class="login-form" action="/login_user" method="post">
@@ -63,9 +63,9 @@ Seq[Any](_display_(/*1.2*/main("VamoJunto!")/*1.20*/{_display_(Seq[Any](format.r
 object index extends index_Scope0.index
               /*
                   -- GENERATED --
-                  DATE: Wed Apr 20 01:44:02 BRT 2016
+                  DATE: Wed Apr 20 11:46:06 BRT 2016
                   SOURCE: /home/joseph/IdeaProjects/vamojunto/view_service/app/views/index.scala.html
-                  HASH: 53220a002e0650600cab126437cc7f60e9c74d10
+                  HASH: 0423719a6f16822e1446298e3be15dfb34eaebf1
                   MATRIX: 827->1|853->19|891->20|923->26
                   LINES: 32->1|32->1|32->1|34->3
                   -- GENERATED --

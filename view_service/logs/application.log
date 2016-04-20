@@ -1161,3 +1161,9 @@ Caused by: java.lang.NullPointerException: null
 	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
 	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249)
 	... 13 common frames omitted
+2016-04-20 11:33:49,886 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-49 - Application started (Dev)
+2016-04-20 11:34:02,637 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2016-04-20 11:34:44,221 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
+2016-04-20 11:45:39,776 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-24 - Application started (Dev)
+2016-04-20 11:46:07,748 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
+2016-04-20 12:01:28,721 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
