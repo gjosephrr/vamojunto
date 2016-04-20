@@ -38,6 +38,7 @@ Seq[Any](_display_(/*1.2*/main("Cadastre-se")/*1.21*/ {_display_(Seq[Any](format
                 <input type="text" placeholder="Nome" required autofocus>
                 <input type="email" placeholder="Email" required autofocus>
                 <input type="text" placeholder="Matrícula"/>
+                <input type="text" placeholder="Telefone"/>
                 <input type="password" placeholder="Senha"/>
                 <input type="password" placeholder="Repita sua senha"/>
 
@@ -70,9 +71,9 @@ Seq[Any](_display_(/*1.2*/main("Cadastre-se")/*1.21*/ {_display_(Seq[Any](format
 object register extends register_Scope0.register
               /*
                   -- GENERATED --
-                  DATE: Tue Apr 19 19:45:28 BRT 2016
-                  SOURCE: /home/joseph/IdeaProjects/vamojunto/view_service/app/views/register.scala.html
-                  HASH: 4d9774ab80e17062940f9c52ecb70f394f3c34a7
+                  DATE: Tue Apr 19 20:53:18 BRT 2016
+                  SOURCE: /home/js/workspace/VamoJunto!/vamojunto/view_service/app/views/register.scala.html
+                  HASH: c60e183720cfb2559e6a3913566ea1a9df2bedd8
                   MATRIX: 833->1|860->20|899->22|931->28
                   LINES: 32->1|32->1|32->1|34->3
                   -- GENERATED --
