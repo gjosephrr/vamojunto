@@ -38,5 +38,13 @@ public class UserDAO {
             System.out.println();
         }
     }
-
+    public User authenticateUser(String school_id, String password) {
+        System.out.println(school_id);
+        for (User user : usersDB) {
+            if (user.getSchoolId().equals(school_id) && user.getPassword().equals(password)) {
+                return user;
+            }
+        }
+        return null;
+    }
 }

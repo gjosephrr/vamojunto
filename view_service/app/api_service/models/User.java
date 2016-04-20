@@ -49,7 +49,7 @@ public class User {
         this.role = UserRoles.DRIVER;
     }
 
-    public boolean validadeSchoolId(){
+    public boolean validateSchoolId(){
         // TODO
         return true;
     }
@@ -57,5 +57,13 @@ public class User {
     @Override
     public String toString() {
         return "Nome: " + this.name + "\nMatrícula: " + this.schoolId + "\nPapel: " + this.role;
+    }
+
+    public String getSchoolId(){
+        return schoolId;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

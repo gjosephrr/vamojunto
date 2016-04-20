@@ -35,10 +35,10 @@ Seq[Any](_display_(/*1.2*/main("VamoJunto!")/*1.20*/{_display_(Seq[Any](format.r
         <h2>Bem vindo à VamoJunto!</h2>
         <div class="form">
 
-            <form class="login-form">
-                <input type="text" placeholder="Matrícula" required autofocus>
-                <input type="password" placeholder="Senha" required/>
-                <button>login</button>
+            <form class="login-form" action="/login_user" method="post">
+                <input name="school_id" type="text" placeholder="Matrícula" required autofocus>
+                <input name="password" type="password" placeholder="Senha" required/>
+                <button type="submit">Login</button>
                 <p class="message">Ainda não se cadastrou? <a href="/register">Crie uma conta!</a></p>
             </form>
         </div>
@@ -63,9 +63,9 @@ Seq[Any](_display_(/*1.2*/main("VamoJunto!")/*1.20*/{_display_(Seq[Any](format.r
 object index extends index_Scope0.index
               /*
                   -- GENERATED --
-                  DATE: Tue Apr 19 20:41:32 BRT 2016
-                  SOURCE: /home/js/workspace/VamoJunto!/vamojunto/view_service/app/views/index.scala.html
-                  HASH: 11efa89c19eccc6a4f4248e6c441139ee271b1ef
+                  DATE: Wed Apr 20 01:44:02 BRT 2016
+                  SOURCE: /home/joseph/IdeaProjects/vamojunto/view_service/app/views/index.scala.html
+                  HASH: 53220a002e0650600cab126437cc7f60e9c74d10
                   MATRIX: 827->1|853->19|891->20|923->26
                   LINES: 32->1|32->1|32->1|34->3
                   -- GENERATED --

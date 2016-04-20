@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/js/workspace/VamoJunto!/vamojunto/view_service/conf/routes
-// @DATE:Tue Apr 19 23:14:10 BRT 2016
+// @SOURCE:/home/joseph/IdeaProjects/vamojunto/view_service/conf/routes
+// @DATE:Wed Apr 20 01:44:02 BRT 2016
 
 package router
 
@@ -53,6 +53,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """driver_page""", """controllers.HomeController.driver()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """hitchhiker_page""", """controllers.HomeController.hitchhiker()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """new_user""", """api_service.controllers.APIController.newUser()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login_user""", """api_service.controllers.APIController.login()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -162,6 +163,23 @@ class Routes(
     )
   )
 
+  // @LINE:18
+  private[this] lazy val api_service_controllers_APIController_login6_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login_user")))
+  )
+  private[this] lazy val api_service_controllers_APIController_login6_invoker = createInvoker(
+    APIController_0.login(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "api_service.controllers.APIController",
+      "login",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """login_user"""
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -199,6 +217,12 @@ class Routes(
     case api_service_controllers_APIController_newUser5_route(params) =>
       call { 
         api_service_controllers_APIController_newUser5_invoker.call(APIController_0.newUser())
+      }
+  
+    // @LINE:18
+    case api_service_controllers_APIController_login6_route(params) =>
+      call { 
+        api_service_controllers_APIController_login6_invoker.call(APIController_0.login())
       }
   }
 }

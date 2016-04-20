@@ -1,6 +1,7 @@
 package api_service.controllers;
 
 import api_service.DataAccessLayer.UserDAO;
+import api_service.models.User;
 import play.*;
 import play.mvc.*;
 
@@ -36,5 +37,20 @@ public class APIController extends Controller{
 
         userDAO.listUsers();
         return ok(dynamicForm.get("school_id"));
+    }
+
+
+
+    public Result login(){
+
+        DynamicForm dynamicForm = Form.form().bindFromRequest();
+
+        String schoolId = dynamicForm.get("school_id");
+        String password = dynamicForm.get("password");
+
+
+        return ok (userDAO.authenticateUser(schoolId,password).toString());
+
+
     }
 }

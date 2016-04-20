@@ -4,10 +4,10 @@
         <h2>Bem vindo à VamoJunto!</h2>
         <div class="form">
 
-            <form class="login-form">
-                <input type="text" placeholder="Matrícula" required autofocus>
-                <input type="password" placeholder="Senha" required/>
-                <button>login</button>
+            <form class="login-form" action="/login_user" method="post">
+                <input name="school_id" type="text" placeholder="Matrícula" required autofocus>
+                <input name="password" type="password" placeholder="Senha" required/>
+                <button type="submit">Login</button>
                 <p class="message">Ainda não se cadastrou? <a href="/register">Crie uma conta!</a></p>
             </form>
         </div>
