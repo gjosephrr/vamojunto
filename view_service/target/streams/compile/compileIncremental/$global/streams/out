@@ -1,28 +1,218 @@
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes/api_service/models/Ride.class: stamp changed from lastModified(1461275546000) to lastModified(1461280115000)[0m
-[0m[[0mdebug[0m] [0m[naha] Invalidating /home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes/api_service/controllers/APIController.class: stamp changed from lastModified(1461279067000) to lastModified(1461280115000)[0m
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
 [0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	added: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	modified: Set(/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java, /home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/Ride.java, /home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/controllers/APIController.java, /home/js/workspace/VamoJunto!/vamojunto/view_service/app/controllers/ViewController.java)[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set(/home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes/api_service/models/Ride.class, /home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes/api_service/controllers/APIController.class)[0m
-[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java, /home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/Ride.java, /home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/controllers/APIController.java, /home/js/workspace/VamoJunto!/vamojunto/view_service/app/controllers/ViewController.java)[0m
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
 [0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set(/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/DataAccessLayer/RideDAO.java, /home/js/workspace/VamoJunto!/vamojunto/view_service/app/controllers/ViewController.java)[0m
+[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/DataAccessLayer/RideDAO.java, /home/js/workspace/VamoJunto!/vamojunto/view_service/app/controllers/ViewController.java)[0m
-[0m[[0minfo[0m] [0mCompiling 2 Java sources to /home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes...[0m
-[0m[[0mdebug[0m] [0mAttempting to call com.sun.tools.javac.api.JavacTool@2acca3f6 directly...[0m
-[0m[[0mdebug[0m] [0mJava compilation took 0.542290391 s[0m
-[0m[[0mdebug[0m] [0mJava analysis took 0.040402509 s[0m
-[0m[[0mdebug[0m] [0mJava compile + analysis took 0.585002083 s[0m
-[0m[[0mdebug[0m] [0m[naha] New invalidations:[0m
-[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Previously invalidated, but (transitively) depend on new invalidations:[0m
-[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
-[0m[[0mdebug[0m] [0m[naha] All newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java, /home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/Ride.java, /home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/controllers/APIController.java, /home/js/workspace/VamoJunto!/vamojunto/view_service/app/controllers/ViewController.java)[0m
+[0m[[0minfo[0m] [0mCompiling 4 Java sources to /home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes...[0m
+[0m[[0mdebug[0m] [0mAttempting to call com.sun.tools.javac.api.JavacTool@2e80ddc3 directly...[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:15: illegal start of expression[0m
+[0m[[31merror[0m] [0m        this.mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:15: ';' expected[0m
+[0m[[31merror[0m] [0m        this.mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:15: illegal start of expression[0m
+[0m[[31merror[0m] [0m        this.mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:15: ';' expected[0m
+[0m[[31merror[0m] [0m        this.mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:15: illegal start of expression[0m
+[0m[[31merror[0m] [0m        this.mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:15: ';' expected[0m
+[0m[[31merror[0m] [0m        this.mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:15: illegal start of expression[0m
+[0m[[31merror[0m] [0m        this.mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:15: ';' expected[0m
+[0m[[31merror[0m] [0m        this.mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:15: illegal start of expression[0m
+[0m[[31merror[0m] [0m        this.mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:15: ';' expected[0m
+[0m[[31merror[0m] [0m        this.mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:15: illegal start of expression[0m
+[0m[[31merror[0m] [0m        this.mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:15: ';' expected[0m
+[0m[[31merror[0m] [0m        this.mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:15: illegal start of type[0m
+[0m[[31merror[0m] [0m        this.mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: <identifier> expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: illegal start of type[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: illegal start of type[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: ')' expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: ';' expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: illegal start of type[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: <identifier> expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: ';' expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: illegal start of type[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: <identifier> expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: ';' expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: illegal start of type[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: <identifier> expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:16: ';' expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:17: illegal start of type[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("araxa",{"bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:17: illegal start of type[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("araxa",{"bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:17: illegal start of type[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("araxa",{"bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:17: ')' expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("araxa",{"bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:17: ';' expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("araxa",{"bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:17: illegal start of type[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("araxa",{"bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:17: <identifier> expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("araxa",{"bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:17: ';' expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("araxa",{"bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:18: <identifier> expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_das_cidades", {"tres_irmas", "malvinas", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:18: illegal start of type[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_das_cidades", {"tres_irmas", "malvinas", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:18: illegal start of type[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_das_cidades", {"tres_irmas", "malvinas", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:18: ')' expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_das_cidades", {"tres_irmas", "malvinas", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:18: ';' expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_das_cidades", {"tres_irmas", "malvinas", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:18: illegal start of type[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_das_cidades", {"tres_irmas", "malvinas", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:18: <identifier> expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_das_cidades", {"tres_irmas", "malvinas", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:18: ';' expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_das_cidades", {"tres_irmas", "malvinas", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:18: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_das_cidades", {"tres_irmas", "malvinas", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:19: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_das_nacoes", {"jardim_continental",  "louzeiro", "palmeira", "jeremias", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:20: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_universitario", {"bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:21: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bela_vista", {"bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:22: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("catole", {"estacao_velha", "sao_jose", "prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:23: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("castelo_branco", {"santo antonio", "centro", "prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:24: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("centenario", {"pedregal", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:25: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("centro", {"prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:26: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("cruzeiro", {"santa_rosa", "centenario", "pedregal", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:27: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("cuites", {"araxa","bairro_ universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:28: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("dinamerica", {"bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:29: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("distrito_industrial", {"jardim_paulistano", "cruzeiro", "santa_rosa", "centenario", "pedregal", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:30: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("estacao_velha", {"sao_jose", "prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:31: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("itarare", {"tambor", "liberdade", "quarenta", "centenario", "pedregal", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:32: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("jardim_continental",  {"louzeiro", "palmeira", "jeremias", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:33: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("jardim_paulistano", {"cruzeiro", "santa_rosa", "centenario", "pedregal", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:34: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("jardim_tavares", {"alto_branco", "louzeiro ","palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:35: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("jeremias", {"bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:36: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("jose_pinheiro ", {"centro", "prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:37: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("liberdade", {"quarenta", "centenario", "pedregal", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:38: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("louzeiro", {"palmeira", "jeremias", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:39: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("malvinas", {"bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:40: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("mirante", {"jose_pinheiro", "centro", "prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:41: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("monte_castelo", {"jose_pinheiro ", "centro", "prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:42: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("nova_brasilia", {"monte_castelo", "jose_pinheiro", "centro", "prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:43: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("novo_bodocongo", {"bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:44: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("palmeira", {"jeremias", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:45: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("prata", {"bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:46: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("pedregal", {"bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:47: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("presidente_medici", {"santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:48: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("quarenta", {"centenario", "pedregal", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:49: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("ramadinha", {"bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:50: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("sandra_cavalcante", {"catole", "estacao_velha", "sao_jose", "prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:51: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("santa_cruz", {"dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:52: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("santa_rosa", {"centenario", "pedregal", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:53: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("santa_terezinha",{"mirante","jose_pinheiro", "centro", "prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:54: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("santo antonio", {"centro", "prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:55: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("sao_jose", {"prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:56: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("serrotao", {"ramadinha", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:57: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("tambor", {"liberdade", "quarenta", "centenario", "pedregal", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:58: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("tres_irmas", {"malvinas", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:59: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("vila_cabral", {"sandra_cavalcante", "catole", "estacao_velha", "sao_jose", "prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:60: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("velame", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:61: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("araxa",{"bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:62: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("alto_branco", {"alto_branco", "louzeiro", "palmeira", "monte_santo", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:63: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("acacio_figueiredo", {"presidente_medici", "santa_cruz", "dinamerica", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:64: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_das_cidades", {"tres_irmas", "malvinas", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:65: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_das_nacoes", {"jardim_continental",  "louzeiro", "palmeira", "jeremias", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:66: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bairro_universitario", {"bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:67: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("bela_vista", {"bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:68: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("catole", {"estacao_velha", "sao_jose", "prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:69: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("castelo_branco", {"santo antonio", "centro", "prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:70: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("centenario", {"pedregal", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:71: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("centro", {"prata", "bela_vista", "bairro_universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:72: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("cruzeiro", {"santa_rosa", "centenario", "pedregal", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:73: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("cuites", {"araxa","bairro_ universitario", "bodocongo"});[0m
+[0m[[31merror[0m] [0m/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/models/City.java:74: class, interface, or enum expected[0m
+[0m[[31merror[0m] [0m        mapDistricts.put("dinamerica", {"bodocongo"});[0m
+[0m[[31merror[0m] [0m(compile:[31mcompileIncremental[0m) javac returned nonzero exit code[0m

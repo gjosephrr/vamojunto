@@ -57,7 +57,9 @@ public class APIController extends Controller{
         return ok(dynamicForm.get("school_id"));
     }
 
-
+    // AQUI PEGAMOS AS VIAGENS SIMILARES (SAÍDA)
+    // ESTE MÉTODO E O PRÓXIMO, PRECISAM SER ATUALIZADOS PARA CONSIDERAR COMO SIMILARS, VIAGENS COM ROTAS QUE INCLUAM A ORIGEM
+    // DO PASSAGEIRO (NO MOMENTO, APENAS LISTA VIAGENS COM MESMA ORIGEM)
     public static ArrayList<Ride> getSimilarDepartureRides(User activeUser){
         ArrayList<Ride> allRides = rideDAO.getAllRides();
         ArrayList<Ride> similarDepartureRides = new ArrayList<Ride>();
@@ -73,6 +75,7 @@ public class APIController extends Controller{
         return similarDepartureRides;
     }
 
+    // AQUI PEGAMOS AS VIAGENS SIMILARES (VOLTA)
     public static ArrayList<Ride> getSimilarReturnRides(User activeUser){
         ArrayList<Ride> allRides = rideDAO.getAllRides();
         ArrayList<Ride> similarReturnRides = new ArrayList<Ride>();

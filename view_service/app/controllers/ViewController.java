@@ -31,6 +31,8 @@ public class ViewController extends Controller {
     }
 
     public Result loginUser(){
+        // NO MOMENTO DE LOGIN, PEGAMOS TODAS AS INFORMAÇÕES QUE SERÃO NECESSÁRIAS PARA MOSTRAR NA PÁGINA
+        // (ISSO PODE SER MUDADO MAS SUGIRO QUE SEJA EM ENTREGAS FUTURAS) USAMOS A API DE CONTROLLER PARA PEGAR AS INFORMAÕES
         activeUser = api_service.controllers.APIController.login();
         ArrayList<Ride> similarDepartureRides = api_service.controllers.APIController.getSimilarDepartureRides(activeUser);
         ArrayList<Ride> similarReturnRides = api_service.controllers.APIController.getSimilarReturnRides(activeUser);

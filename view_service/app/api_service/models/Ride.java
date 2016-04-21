@@ -7,6 +7,8 @@ import java.text.*;
  */
 public class Ride {
 
+    // A CLASSE RIDE PRECISA TER TAMBÉM UM ATRIBUTO ROTA, PEGAMOS DA CLASSE ESTÁTICA CIDADE, O ARRAY CORRESPONDENTE AO
+    // ENDEREÇO DE PARTIDA (PENSAR SOBRE A VIAGEM DE VOLTA)
 
     private String init_address;
     private String departure_time;
