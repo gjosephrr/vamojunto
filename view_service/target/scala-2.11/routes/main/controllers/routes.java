@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/js/workspace/VamoJunto!/vamojunto/view_service/conf/routes
-// @DATE:Thu Apr 21 00:23:07 BRT 2016
+// @DATE:Thu Apr 21 13:24:31 BRT 2016
 
 package controllers;
 

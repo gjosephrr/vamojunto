@@ -2,22 +2,38 @@
 
     <div class="login-page">
         <h2>Bem vindo ao VamoJunto!</h2>
+
         <div class="form">
             <form class="register-form" action="/new_user" method="post">
-                <input name="name" type="text" placeholder="Nome" required autofocus>
-                <input name="email" type="email" placeholder="Email" required autofocus>
-                <input name="school_id" type="text" placeholder="Matrícula" required/>
-                <input name="neighborhood" type="text" placeholder="Bairro" required autofocus>
-                <input name="street" type="text" placeholder="Rua" required autofocus>
-                <input name="phone_number" type="text" placeholder="Telefone" required/>
-                <input name="password" type="password" placeholder="Senha" required/>
-                <input name="password2" type="password" placeholder="Repita sua senha" required/>
+            
+                <div id="first">
+                    <input name="name" type="text" placeholder="Nome" required autofocus>
+                    <input name="email" type="email" placeholder="Email" required autofocus>
+                    <input name="neighborhood" type="text" placeholder="Bairro" required autofocus>
+                    <input name="street" type="text" placeholder="Rua" required autofocus>
+                    <input name="phone_number" type="text" placeholder="Telefone" required/>
+                    <button id="next_btn1" onclick="next_step1()" type="button">Próximo</button>
+                </div>
 
-                <p class="message">Se você também é motorista, insira <br />a quantidade de vagas disponíveis:</p>
-                <input name="vehicle_seats" type="number" value="0" placeholder="Número de vagas no seu veículo">
-                <button type="submit">Cadastrar</button>
+                <div id="second">
+                    <input name="school_id" type="text" placeholder="Matrícula" required/>
+                    <input name="password" type="password" placeholder="Senha" required/>
+                    <input name="password2" type="password" placeholder="Repita sua senha" required/>
+                    <button id="pre_btn1" onclick="prev_step1()" type="button">Voltar</button>
+                    <p></p>
+                    <button id="next_btn2" name="next" onclick="next_step2()" type="button">Próximo</button>
+                </div>
+                
+                <div id="third">
+                    <p class="message">Se você também é motorista, insira <br />a quantidade de vagas disponíveis:</p>
+                    <input name="vehicle_seats" type="number" value="0" placeholder="Número de vagas no seu veículo">
+                    <button id="pre_btn2" onclick="prev_step2()" type="button">Voltar</button>
+                    <p></p>
+                    <button type="submit">Cadastrar</button>
+                </div>
+
                 <p class="message">Já se cadastrou? <a href="/">Entrar</a></p>
             </form>
-        </div>
+            </div>
     </div>
 }

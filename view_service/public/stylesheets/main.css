@@ -3,6 +3,23 @@ html, body{
     padding: 0;
 }
 
+.content{
+width:960px;
+margin:20px auto
+}
+
+#active1{
+color:red
+}
+
+#second{
+    display: none;
+}
+
+#third{
+    display: none;
+}
+
 /* STARTS HERE */
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
@@ -26,6 +43,8 @@ html, body{
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
+
 .form input {
     font-family: "Roboto", sans-serif;
     outline: 0;
@@ -37,6 +56,7 @@ html, body{
     box-sizing: border-box;
     font-size: 14px;
 }
+
 .form button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
