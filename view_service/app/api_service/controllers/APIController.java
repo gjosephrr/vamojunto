@@ -2,6 +2,10 @@ package api_service.controllers;
 
 import api_service.DataAccessLayer.UserDAO;
 import api_service.models.User;
+
+import api_service.DataAccessLayer.RideDAO;
+import api_service.models.Ride;
+
 import play.*;
 import play.mvc.*;
 
@@ -9,12 +13,15 @@ import views.html.*;
 import play.data.DynamicForm;
 import play.data.Form;
 
+import java.util.ArrayList;
+
 /**
  * Created by js on 19/04/16.
  */
 public class APIController extends Controller{
 
     static UserDAO userDAO = new UserDAO();
+    static RideDAO rideDAO = new RideDAO();
 
     public Result newUser(){
         DynamicForm dynamicForm = Form.form().bindFromRequest();
@@ -50,4 +57,11 @@ public class APIController extends Controller{
         return userDAO.authenticateUser(schoolId,password);
 
     }
+
+    public ArrayList<Ride> notifications(){
+
+
+
+    }
+
 }
