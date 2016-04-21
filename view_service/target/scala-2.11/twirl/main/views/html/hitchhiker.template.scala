@@ -147,7 +147,7 @@ Seq[Any](_display_(/*1.2*/main("VamoJunto!")/*1.20*/{_display_(Seq[Any](format.r
 object hitchhiker extends hitchhiker_Scope0.hitchhiker
               /*
                   -- GENERATED --
-                  DATE: Wed Apr 20 01:06:45 BRT 2016
+                  DATE: Wed Apr 20 17:22:28 BRT 2016
                   SOURCE: /home/joseph/IdeaProjects/vamojunto/view_service/app/views/hitchhiker.scala.html
                   HASH: 16b635a30c8cbd70a4c29ed4fff98a4d9cba63b6
                   MATRIX: 837->1|863->19|901->20|933->26|1428->494|1443->500|1500->536|3234->2242|3263->2243|3308->2260|3535->2459|3564->2460|4529->3397|4558->3398|4603->3415|4764->3548|4793->3549|4838->3566|5191->3889

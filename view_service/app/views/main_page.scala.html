@@ -1,3 +1,5 @@
+@(user: api_service.models.User)
+
 @main("VamoJunto!"){
 
     <!-- NOTE: This is only a first draft, a lot in this file will change, including the way we add the map -->
@@ -12,6 +14,11 @@
                     <img src="@routes.Assets.versioned("images/biscoito.png")"
                     class="img-circle img-responsive center-block"
                     width="200" height="300"/>
+                </div>
+
+                <div container-fluid style="padding: 0px">
+                    <p class="message">Bem vindo @user.getName()</p>
+                    <a href="/logout">Logout</a>
                 </div>
 
                 <!-- User rides -->

@@ -71,7 +71,7 @@ Seq[Any](_display_(/*1.2*/main("Cadastre-se")/*1.21*/ {_display_(Seq[Any](format
 object register extends register_Scope0.register
               /*
                   -- GENERATED --
-                  DATE: Wed Apr 20 01:06:45 BRT 2016
+                  DATE: Wed Apr 20 17:22:28 BRT 2016
                   SOURCE: /home/joseph/IdeaProjects/vamojunto/view_service/app/views/register.scala.html
                   HASH: 9517d5229c4463d243c45b3a799c786f948087dd
                   MATRIX: 833->1|860->20|899->22|931->28

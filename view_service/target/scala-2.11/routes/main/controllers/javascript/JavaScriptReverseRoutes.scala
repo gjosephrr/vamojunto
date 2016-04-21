@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/joseph/IdeaProjects/vamojunto/view_service/conf/routes
-// @DATE:Wed Apr 20 01:44:02 BRT 2016
+// @DATE:Wed Apr 20 17:22:26 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -14,56 +14,6 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers.javascript {
   import ReverseRouteContext.empty
-
-  // @LINE:6
-  class ReverseHomeController(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:14
-    def hitchhiker: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.hitchhiker",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "hitchhiker_page"})
-        }
-      """
-    )
-  
-    // @LINE:6
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.index",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
-        }
-      """
-    )
-  
-    // @LINE:10
-    def register: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.register",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "register"})
-        }
-      """
-    )
-  
-    // @LINE:12
-    def driver: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.driver",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "driver_page"})
-        }
-      """
-    )
-  
-  }
 
   // @LINE:8
   class ReverseAssets(_prefix: => String) {
@@ -79,6 +29,56 @@ package controllers.javascript {
       """
         function(file1) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:6
+  class ReverseViewController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:17
+    def loginUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ViewController.loginUser",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "login_user"})
+        }
+      """
+    )
+  
+    // @LINE:19
+    def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ViewController.logout",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logout"})
+        }
+      """
+    )
+  
+    // @LINE:6
+    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ViewController.index",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + """"})
+        }
+      """
+    )
+  
+    // @LINE:10
+    def register: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ViewController.register",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "register"})
         }
       """
     )

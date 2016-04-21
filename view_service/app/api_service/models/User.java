@@ -59,11 +59,31 @@ public class User {
         return "Nome: " + this.name + "\nMatrícula: " + this.schoolId + "\nPapel: " + this.role;
     }
 
+    public String getName(){
+        return this.name;
+    }
+
+    public String getEmail(){
+        return this.email;
+    }
+
+    public String getPhoneNumber(){
+        return this.phoneNumber;
+    }
+
+    public String getNeighborhood(){
+        return this.neighborhood;
+    }
+
+    public String getStreet(){
+        return this.street;
+    }
+
     public String getSchoolId(){
-        return schoolId;
+        return this.schoolId;
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 }
