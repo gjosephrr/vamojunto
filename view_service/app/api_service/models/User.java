@@ -19,7 +19,6 @@ public class User {
     private String street;
 
     private int vehicleSeats;
-
     private UserRoles role;
 
     public User(String name, String email,

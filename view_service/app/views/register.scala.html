@@ -25,6 +25,12 @@
                 </div>
                 
                 <div id="third">
+                    <input name="departure_neighborhood" type="text" placeholder="Bairro de origem" required autofocus>
+                    <input name="arrival_neighborhood" type="text" placeholder="Bairro destino" required autofocus>
+                    <p class="message">Seu horário de partida</p>
+                    <input type="time" name="departure_timestamp" step="1">
+                    <p class="message">Seu horário de retorno</p>
+                    <input type="time" name="return_timestamp" step="1">
                     <p class="message">Se você também é motorista, insira <br />a quantidade de vagas disponíveis:</p>
                     <input name="vehicle_seats" type="number" value="0" placeholder="Número de vagas no seu veículo">
                     <button id="pre_btn2" onclick="prev_step2()" type="button">Voltar</button>

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/js/workspace/VamoJunto!/vamojunto/view_service/conf/routes
-// @DATE:Thu Apr 21 13:24:31 BRT 2016
+// @DATE:Thu Apr 21 16:24:13 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -53,6 +53,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:21
+    def listRides: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ViewController.listRides",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "list_rides"})
+        }
+      """
+    )
+  
     // @LINE:19
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ViewController.logout",
@@ -63,22 +73,22 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:6
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.ViewController.index",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
-        }
-      """
-    )
-  
     // @LINE:10
     def register: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ViewController.register",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "register"})
+        }
+      """
+    )
+  
+    // @LINE:6
+    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ViewController.index",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + """"})
         }
       """
     )

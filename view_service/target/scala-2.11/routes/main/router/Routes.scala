@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/js/workspace/VamoJunto!/vamojunto/view_service/conf/routes
-// @DATE:Thu Apr 21 13:24:31 BRT 2016
+// @DATE:Thu Apr 21 16:24:13 BRT 2016
 
 package router
 
@@ -53,6 +53,7 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """new_user""", """api_service.controllers.APIController.newUser()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login_user""", """controllers.ViewController.loginUser()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.ViewController.logout()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """list_rides""", """controllers.ViewController.listRides()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -162,6 +163,23 @@ class Routes(
     )
   )
 
+  // @LINE:21
+  private[this] lazy val controllers_ViewController_listRides6_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("list_rides")))
+  )
+  private[this] lazy val controllers_ViewController_listRides6_invoker = createInvoker(
+    ViewController_2.listRides(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ViewController",
+      "listRides",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """list_rides"""
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -199,6 +217,12 @@ class Routes(
     case controllers_ViewController_logout5_route(params) =>
       call { 
         controllers_ViewController_logout5_invoker.call(ViewController_2.logout())
+      }
+  
+    // @LINE:21
+    case controllers_ViewController_listRides6_route(params) =>
+      call { 
+        controllers_ViewController_listRides6_invoker.call(ViewController_2.listRides())
       }
   }
 }

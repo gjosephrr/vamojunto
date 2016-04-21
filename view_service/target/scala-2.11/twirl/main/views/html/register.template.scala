@@ -56,6 +56,12 @@ Seq[Any](format.raw/*1.1*/("""﻿"""),_display_(/*1.3*/main("Cadastre-se")/*1.22
                 </div>
                 
                 <div id="third">
+                    <input name="departure_neighborhood" type="text" placeholder="Bairro de origem" required autofocus>
+                    <input name="arrival_neighborhood" type="text" placeholder="Bairro destino" required autofocus>
+                    <p class="message">Seu horário de partida</p>
+                    <input type="time" name="departure_timestamp" step="1">
+                    <p class="message">Seu horário de retorno</p>
+                    <input type="time" name="return_timestamp" step="1">
                     <p class="message">Se você também é motorista, insira <br />a quantidade de vagas disponíveis:</p>
                     <input name="vehicle_seats" type="number" value="0" placeholder="Número de vagas no seu veículo">
                     <button id="pre_btn2" onclick="prev_step2()" type="button">Voltar</button>
@@ -87,9 +93,9 @@ Seq[Any](format.raw/*1.1*/("""﻿"""),_display_(/*1.3*/main("Cadastre-se")/*1.22
 object register extends register_Scope0.register
               /*
                   -- GENERATED --
-                  DATE: Thu Apr 21 14:54:50 BRT 2016
+                  DATE: Thu Apr 21 16:04:26 BRT 2016
                   SOURCE: /home/js/workspace/VamoJunto!/vamojunto/view_service/app/views/register.scala.html
-                  HASH: 0217488ce40a274b712fe3a9eaa287786114c709
+                  HASH: a3922717bde1861a4cb5bad033bff3ae1c808b36
                   MATRIX: 833->0|860->2|887->21|926->23|958->29
                   LINES: 32->1|32->1|32->1|32->1|34->3
                   -- GENERATED --

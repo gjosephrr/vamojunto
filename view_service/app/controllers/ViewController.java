@@ -41,6 +41,11 @@ public class ViewController extends Controller {
         }
     }
 
+    public Result listRides(){
+        api_service.controllers.APIController.listRides();
+        return ok("Listing rides");
+    }
+
     public Result logout() {
         session().clear();
         activeUser = null;

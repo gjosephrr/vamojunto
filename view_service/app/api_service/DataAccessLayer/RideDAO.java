@@ -16,17 +16,21 @@ public class RideDAO {
         ridesDB = new ArrayList<Ride>();
     }
 
-    public void registerRide(String driver, String init_address,
-                             String departure_time, String final_address,
-                             String arrival_time, int seats){
+    public Ride registerRide(String driver, String init_address,
+                             String final_address, String departure_time,
+                             int seats){
 
                 // Instantiate new ride
-                Ride ride = new Ride(driver,init_address, departure_time, final_address, arrival_time, seats);
+                Ride ride = new Ride(driver,init_address, final_address, departure_time, seats);
 
         ridesDB.add(ride);
 
+        return ride;
     }
 
+    public ArrayList<Ride> getAllRides(){
+        return this.ridesDB;
+    }
 
     //falta saber informações de rota
     public ArrayList<Ride> listSimilarDeparture(String init_address, String departure_time) {
@@ -38,7 +42,6 @@ public class RideDAO {
         }
         return similarRides;
     }
-
 
     //falta saber informações de rota
     public ArrayList<Ride> listSimilarArrivals (String final_address, String arrival_time ){

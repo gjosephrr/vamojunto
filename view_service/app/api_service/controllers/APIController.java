@@ -14,6 +14,7 @@ import play.data.DynamicForm;
 import play.data.Form;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by js on 19/04/16.
@@ -26,6 +27,7 @@ public class APIController extends Controller{
     public Result newUser(){
         DynamicForm dynamicForm = Form.form().bindFromRequest();
 
+        // Gets user fields
         String name = dynamicForm.get("name");
         String email= dynamicForm.get("email");
         String schoolId = dynamicForm.get("school_id");
@@ -34,8 +36,18 @@ public class APIController extends Controller{
         String phoneNumber = dynamicForm.get("phoneNumber");
         String neighborhood = dynamicForm.get("neighborhood");
         String street = dynamicForm.get("street");
-
+        // Ride information
+        String departureNeighborhood = dynamicForm.get("departure_neighborhood");
+        String arrivalNeighborhood = dynamicForm.get("arrival_neighborhood");
+        String departureTime = dynamicForm.get("departure_timestamp");
+        String returnTime = dynamicForm.get("return_timestamp");
         int vehicleSeats = Integer.parseInt(dynamicForm.get("vehicle_seats"));
+
+        // User departure and return rides
+        Ride userDeparture = rideDAO.registerRide(name, departureNeighborhood, arrivalNeighborhood, 
+            departureTime, vehicleSeats);
+        Ride userReturn = rideDAO.registerRide(name, arrivalNeighborhood, departureNeighborhood,
+            returnTime, vehicleSeats);
 
         userDAO.registerUser(name, email, schoolId,
                 password, password2, phoneNumber,
@@ -56,6 +68,14 @@ public class APIController extends Controller{
 
         return userDAO.authenticateUser(schoolId,password);
 
+    }
+
+    public static void listRides(){
+        ArrayList<Ride> rides = rideDAO.getAllRides();
+        System.out.println("entrou");
+        for(Ride ride: rides){
+            System.out.println(ride);
+        }
     }
 
     public ArrayList<Ride> notifications(){

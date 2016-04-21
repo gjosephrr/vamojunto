@@ -11,17 +11,15 @@ public class Ride {
     private String init_address;
     private String departure_time;
     private String final_address;
-    private String arrival_time;
     private String driver_id;
     private int seats;
     private int ride_id;
 
-    public Ride(String driver, String init_address, String departure_time, String final_address, String arrival_time, int seats){
+    public Ride(String driver, String init_address, String final_address, String departure_time, int seats){
 
             this.init_address = init_address;
             this.departure_time = departure_time;
             this.final_address = final_address;
-            this.arrival_time = arrival_time;
             this.driver_id = driver;
             this.seats = seats;
 
@@ -41,6 +39,11 @@ public class Ride {
     }
     public void generateId(){
 
+    }
+
+    @Override
+    public String toString() {
+        return "Motorista: " + this.driver_id + "\nParte de: " + this.init_address + "\nChega em: " + this.final_address;
     }
 
 }
