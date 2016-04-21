@@ -33,13 +33,13 @@ public class Ride {
     public String getDriver() {
         return driver_id;
     }
-    public boolean isSimilarDeperture(String departure){
+    public boolean isSimilarDeparture(String departure){
         return init_address.equals(departure);
     }
     public boolean isSimilarTime(String time){
         return departure_time.equals(time);
     }
-    public void generateId(String number){
+    public void generateId(){
 
     }
 

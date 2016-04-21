@@ -60,7 +60,7 @@ public class APIController extends Controller{
 
     public ArrayList<Ride> notifications(){
 
-
+        return null;
 
     }
 

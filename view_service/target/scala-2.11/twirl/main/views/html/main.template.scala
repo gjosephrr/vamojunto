@@ -83,8 +83,8 @@ Seq[Any](format.raw/*7.32*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Wed Apr 20 17:22:28 BRT 2016
-                  SOURCE: /home/joseph/IdeaProjects/vamojunto/view_service/app/views/main.scala.html
+                  DATE: Thu Apr 21 00:23:07 BRT 2016
+                  SOURCE: /home/js/workspace/VamoJunto!/vamojunto/view_service/app/views/main.scala.html
                   HASH: 28b9c51510b352d5d2cb999a3b7ca621ee343eff
                   MATRIX: 1002->260|1127->290|1155->292|1235->397|1271->406|1306->414|1332->419|1421->481|1436->487|1499->528|1587->589|1602->595|1663->634|1714->658|1729->664|1813->727|1909->796|1924->802|2006->863|2101->931|2116->937|2178->978|2272->1134|2309->1144|2337->1151|2371->1158
                   LINES: 32->7|37->7|39->9|42->12|43->13|43->13|43->13|44->14|44->14|44->14|45->15|45->15|45->15|46->16|46->16|46->16|49->19|49->19|49->19|52->22|52->22|52->22|55->26|56->27|56->27|59->30
