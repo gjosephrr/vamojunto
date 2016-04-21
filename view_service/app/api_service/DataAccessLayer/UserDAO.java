@@ -2,7 +2,9 @@ package api_service.DataAccessLayer;
 
 import api_service.models.User;
 import java.util.ArrayList;
+import api_service.models.Ride;
 
+// TEMPORÁRIO
 /**
  * Created by js on 19/04/16.
  */
@@ -13,8 +15,12 @@ public class UserDAO {
     public UserDAO(){
         usersDB = new ArrayList<User>();
 
+        // USUÁRIO DE TESTE, REMOVER DEPOIS
+        Ride userDeparture = new Ride();
+        Ride userReturn = new Ride();
+
         User newUser = registerUser("biscoito", "biscoito@gmail.com", "424242",
-            "123", "123", "424242", "far away", "uma aí", 0);
+            "123", "123", "424242", "far away", "uma aí", 0, userDeparture, userReturn);
 
         usersDB.add(newUser);
     }
@@ -23,12 +29,13 @@ public class UserDAO {
                              String school_id, String password,
                              String password2, String phoneNumber,
                              String neighborhood, String street,
-                             int vehicleSeats){
+                             int vehicleSeats,
+                             Ride departureRide, Ride returnRide){
 
         // Instantiate new user
         User newUser = new User(name, email, school_id,
                 password, password2, phoneNumber,
-                neighborhood, street, vehicleSeats);
+                neighborhood, street, vehicleSeats, departureRide, returnRide);
 
         // Save new user
         usersDB.add(newUser);
@@ -43,8 +50,8 @@ public class UserDAO {
             System.out.println();
         }
     }
+    
     public User authenticateUser(String school_id, String password) {
-        System.out.println(school_id);
         for (User user : usersDB) {
             if (user.getSchoolId().equals(school_id) && user.getPassword().equals(password)) {
                 return user;

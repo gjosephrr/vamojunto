@@ -1,3 +1,5 @@
+[0m[[0mdebug[0m] [0m[naha] Invalidating /home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes/api_service/models/Ride.class: stamp changed from lastModified(1461275546000) to lastModified(1461280115000)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating /home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes/api_service/controllers/APIController.class: stamp changed from lastModified(1461279067000) to lastModified(1461280115000)[0m
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
 [0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
@@ -5,11 +7,22 @@
 [0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set(/home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes/api_service/models/Ride.class, /home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes/api_service/controllers/APIController.class)[0m
 [0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set()[0m
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
 [0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
-[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set(/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/DataAccessLayer/RideDAO.java, /home/js/workspace/VamoJunto!/vamojunto/view_service/app/controllers/ViewController.java)[0m
 [0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/js/workspace/VamoJunto!/vamojunto/view_service/app/api_service/DataAccessLayer/RideDAO.java, /home/js/workspace/VamoJunto!/vamojunto/view_service/app/controllers/ViewController.java)[0m
+[0m[[0minfo[0m] [0mCompiling 2 Java sources to /home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes...[0m
+[0m[[0mdebug[0m] [0mAttempting to call com.sun.tools.javac.api.JavacTool@2acca3f6 directly...[0m
+[0m[[0mdebug[0m] [0mJava compilation took 0.542290391 s[0m
+[0m[[0mdebug[0m] [0mJava analysis took 0.040402509 s[0m
+[0m[[0mdebug[0m] [0mJava compile + analysis took 0.585002083 s[0m
+[0m[[0mdebug[0m] [0m[naha] New invalidations:[0m
+[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Previously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0mdebug[0m] [0m[naha] 	Set()[0m
+[0m[[0mdebug[0m] [0m[naha] All newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m

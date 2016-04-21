@@ -11,15 +11,20 @@ public class Ride {
     private String init_address;
     private String departure_time;
     private String final_address;
+    private String phoneNumber;
     private String driver_id;
     private int seats;
     private int ride_id;
 
-    public Ride(String driver, String init_address, String final_address, String departure_time, int seats){
+    // CONSTRUTOR TEMPORÁRIO
+    public Ride(){}
+
+    public Ride(String driver, String phoneNumber, String init_address, String final_address, String departure_time, int seats){
 
             this.init_address = init_address;
             this.departure_time = departure_time;
             this.final_address = final_address;
+            this.phoneNumber = phoneNumber;
             this.driver_id = driver;
             this.seats = seats;
 
@@ -31,14 +36,35 @@ public class Ride {
     public String getDriver() {
         return driver_id;
     }
-    public boolean isSimilarDeparture(String departure){
-        return init_address.equals(departure);
-    }
-    public boolean isSimilarTime(String time){
-        return departure_time.equals(time);
-    }
+
     public void generateId(){
 
+    }
+
+    public String getInitAddress(){
+        return this.init_address;
+    }
+
+    public String getDepartureTime(){
+        return this.departure_time;
+    }
+
+    public String getFinalAddress(){
+        return this.final_address;
+    }
+
+    public int getSeats(){
+        return this.seats;
+    }
+
+    // OBS: Por enquanto, considero apenas o mesmo endereço de partida, ajustar isso depois
+    public boolean isSimilarTo(Ride ride){
+        if( this.init_address.equals(ride.getInitAddress()) &&
+            this.departure_time.equals(ride.getDepartureTime()) &&
+            this.final_address.equals(ride.getFinalAddress())){
+            return true;
+        }
+        return false;
     }
 
     @Override

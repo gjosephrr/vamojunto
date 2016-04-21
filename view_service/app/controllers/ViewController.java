@@ -3,7 +3,9 @@ package controllers;
 import play.*;
 import play.mvc.*;
 import api_service.models.User;
+import api_service.models.Ride;
 
+import java.util.ArrayList;
 import views.html.*;
 
 /**
@@ -30,10 +32,21 @@ public class ViewController extends Controller {
 
     public Result loginUser(){
         activeUser = api_service.controllers.APIController.login();
+        ArrayList<Ride> similarDepartureRides = api_service.controllers.APIController.getSimilarDepartureRides(activeUser);
+        ArrayList<Ride> similarReturnRides = api_service.controllers.APIController.getSimilarReturnRides(activeUser);
+
+        System.out.println("Saída");
+        for(Ride ride: similarDepartureRides){
+            System.out.println(ride);
+        }
+
+        System.out.println("Volta");
+        for(Ride ride: similarReturnRides){
+            System.out.println(ride);
+        }
 
         if(activeUser != null){
-            session().clear();
-            session("school_id", activeUser.getSchoolId());
+            
             return ok(main_page.render(activeUser));
         }else{
             flash("A problem ocurred, try loggin in again");

@@ -22,11 +22,7 @@ public class SolicitationDAO {
     }
     public ArrayList<Solicitation> listPendingRequest(String responser_id) {
         ArrayList<Solicitation> pendingRequests = new ArrayList<Solicitation>();
-        for (Solicitation solicitation : solicitationsDB) {
-            if (solicitation.isSimilarDriver(responser_id)) {
-                pendingRequests.add(solicitation);
-            }
-        }
+        
         return pendingRequests;
     }
 

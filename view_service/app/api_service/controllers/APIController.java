@@ -44,20 +44,49 @@ public class APIController extends Controller{
         int vehicleSeats = Integer.parseInt(dynamicForm.get("vehicle_seats"));
 
         // User departure and return rides
-        Ride userDeparture = rideDAO.registerRide(name, departureNeighborhood, arrivalNeighborhood, 
+        Ride userDeparture = rideDAO.registerRide(schoolId, phoneNumber,departureNeighborhood, arrivalNeighborhood, 
             departureTime, vehicleSeats);
-        Ride userReturn = rideDAO.registerRide(name, arrivalNeighborhood, departureNeighborhood,
+        Ride userReturn = rideDAO.registerRide(schoolId, phoneNumber, arrivalNeighborhood, departureNeighborhood,
             returnTime, vehicleSeats);
 
         userDAO.registerUser(name, email, schoolId,
                 password, password2, phoneNumber,
-                neighborhood, street, vehicleSeats);
+                neighborhood, street, vehicleSeats,
+                userDeparture, userReturn);
 
-        userDAO.listUsers();
         return ok(dynamicForm.get("school_id"));
     }
 
 
+    public static ArrayList<Ride> getSimilarDepartureRides(User activeUser){
+        ArrayList<Ride> allRides = rideDAO.getAllRides();
+        ArrayList<Ride> similarDepartureRides = new ArrayList<Ride>();
+        
+        for(Ride ride: allRides){
+            if(ride.isSimilarTo(activeUser.getDepartureRide()) && 
+                !ride.getDriver().equals(activeUser.getDepartureRide().getDriver()) &&
+                ride.getSeats() > 0) {
+                similarDepartureRides.add(ride);
+            }
+        }
+
+        return similarDepartureRides;
+    }
+
+    public static ArrayList<Ride> getSimilarReturnRides(User activeUser){
+        ArrayList<Ride> allRides = rideDAO.getAllRides();
+        ArrayList<Ride> similarReturnRides = new ArrayList<Ride>();
+
+        for(Ride ride: allRides){
+            if(ride.isSimilarTo(activeUser.getReturnRide()) && 
+                !ride.getDriver().equals(activeUser.getReturnRide().getDriver()) &&
+                ride.getSeats() > 0){
+                similarReturnRides.add(ride);
+            }
+        }
+
+        return similarReturnRides;
+    }
 
     public static User login(){
 

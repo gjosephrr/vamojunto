@@ -4,6 +4,8 @@ package api_service.models;
  * Created by joseph on 19/04/16.
  */
 
+import api_service.models.Ride;
+
 public class User {
 
     private enum UserRoles{
@@ -21,11 +23,15 @@ public class User {
     private int vehicleSeats;
     private UserRoles role;
 
+    private Ride departureRide;
+    private Ride returnRide;
+
     public User(String name, String email,
                 String school_id, String password,
                 String password2, String phoneNumber,
                 String neighborhood, String street,
-                int vehicleSeats){
+                int vehicleSeats,
+                Ride departureRide, Ride returnRide){
 
         this.name = name;
         this.email = email;
@@ -34,6 +40,8 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.neighborhood = neighborhood;
         this.street = street;
+        this.departureRide = departureRide;
+        this.returnRide = returnRide;
 
         if(vehicleSeats != 0){
             userBecomeDriver(vehicleSeats);
@@ -46,6 +54,14 @@ public class User {
     public void userBecomeDriver(int vehicleSeats){
         this.vehicleSeats = vehicleSeats;
         this.role = UserRoles.DRIVER;
+    }
+
+    public Ride getDepartureRide(){
+        return this.departureRide;
+    }
+
+    public Ride getReturnRide(){
+        return this.returnRide;
     }
 
     public boolean validateSchoolId(){
