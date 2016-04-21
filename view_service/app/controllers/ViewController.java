@@ -32,17 +32,19 @@ public class ViewController extends Controller {
         activeUser = api_service.controllers.APIController.login();
 
         if(activeUser != null){
-            //session().clear();
-            //session("school_id", activeUser.getSchoolId());
+            session().clear();
+            session("school_id", activeUser.getSchoolId());
             return ok(main_page.render(activeUser));
         }else{
-            return ok("A problem ocurred, try loggin in again");
+            flash("A problem ocurred, try loggin in again");
+            return ok(index.render());
         }
     }
 
     public Result logout() {
+        session().clear();
         activeUser = null;
 
-        return ok(index.render());
+        return redirect(routes.ViewController.index());
     }
 }
