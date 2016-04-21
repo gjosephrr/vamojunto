@@ -1,4 +1,4 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/home/joseph/IdeaProjects/vamojunto/view_service/conf/logback.xml,/home/joseph/IdeaProjects/vamojunto/view_service/target/scala-2.11/classes/logback.xml)[0m
-[0m[[0mdebug[0m] [0m	(/home/joseph/IdeaProjects/vamojunto/view_service/conf/routes,/home/joseph/IdeaProjects/vamojunto/view_service/target/scala-2.11/classes/routes)[0m
-[0m[[0mdebug[0m] [0m	(/home/joseph/IdeaProjects/vamojunto/view_service/conf/application.conf,/home/joseph/IdeaProjects/vamojunto/view_service/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/js/workspace/VamoJunto!/vamojunto/view_service/conf/application.conf,/home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/js/workspace/VamoJunto!/vamojunto/view_service/conf/routes,/home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/js/workspace/VamoJunto!/vamojunto/view_service/conf/logback.xml,/home/js/workspace/VamoJunto!/vamojunto/view_service/target/scala-2.11/classes/logback.xml)[0m

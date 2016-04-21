@@ -18,10 +18,10 @@ public class RideDAO {
 
     public void registerRide(String driver, String init_address,
                              String departure_time, String final_address,
-                             String arrival_time){
+                             String arrival_time, int seats){
 
                 // Instantiate new ride
-                Ride ride = new Ride(driver,init_address, departure_time, final_address, arrival_time);
+                Ride ride = new Ride(driver,init_address, departure_time, final_address, arrival_time, seats);
 
         ridesDB.add(ride);
 
@@ -32,7 +32,7 @@ public class RideDAO {
     public ArrayList<Ride> listSimilarDeparture(String init_address, String departure_time) {
         ArrayList<Ride> similarRides = new ArrayList<Ride>();
         for (Ride ride : ridesDB) {
-            if (ride.isSimilarTime(departure_time) &&  ride.isSimilarDeperture(init_address)) {
+            if (ride.isSimilarTime(departure_time) &&  ride.isSimilarDeparture(init_address)) {
                 similarRides.add(ride);
             }
         }
@@ -44,7 +44,7 @@ public class RideDAO {
     public ArrayList<Ride> listSimilarArrivals (String final_address, String arrival_time ){
         ArrayList<Ride> similarRides = new ArrayList<Ride>();
         for (Ride ride : ridesDB) {
-            if (ride.isSimilarTime(arrival_time) && ride.isSimilarDeperture(final_address)){
+            if (ride.isSimilarTime(arrival_time) && ride.isSimilarDeparture(final_address)){
                     similarRides.add(ride);
             }
         }

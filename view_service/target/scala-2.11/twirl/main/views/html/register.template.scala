@@ -29,23 +29,23 @@ class register extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Fo
       {
 
 
-Seq[Any](_display_(/*1.2*/main("Cadastre-se")/*1.21*/ {_display_(Seq[Any](format.raw/*1.23*/("""
+Seq[Any](format.raw/*1.1*/("""﻿"""),_display_(/*1.3*/main("Cadastre-se")/*1.22*/ {_display_(Seq[Any](format.raw/*1.24*/("""
 
     """),format.raw/*3.5*/("""<div class="login-page">
-        <h2>Bem vindo à VamoJunto!</h2>
+        <h2>Bem vindo ao VamoJunto!</h2>
         <div class="form">
             <form class="register-form" action="/new_user" method="post">
                 <input name="name" type="text" placeholder="Nome" required autofocus>
                 <input name="email" type="email" placeholder="Email" required autofocus>
                 <input name="school_id" type="text" placeholder="Matrícula" required/>
+                <input name="neighborhood" type="text" placeholder="Bairro" required autofocus>
+                <input name="street" type="text" placeholder="Rua" required autofocus>
                 <input name="phone_number" type="text" placeholder="Telefone" required/>
                 <input name="password" type="password" placeholder="Senha" required/>
                 <input name="password2" type="password" placeholder="Repita sua senha" required/>
 
-                <p class="message">Para motoristas:</p>
+                <p class="message">Se você também é motorista, insira <br />a quantidade de vagas disponíveis:</p>
                 <input name="vehicle_seats" type="number" value="0" placeholder="Número de vagas no seu veículo">
-                <input name="neighborhood" type="text" placeholder="Bairro" required autofocus>
-                <input name="street" type="text" placeholder="Rua" required autofocus>
                 <button type="submit">Cadastrar</button>
                 <p class="message">Já se cadastrou? <a href="/">Entrar</a></p>
             </form>
@@ -71,11 +71,11 @@ Seq[Any](_display_(/*1.2*/main("Cadastre-se")/*1.21*/ {_display_(Seq[Any](format
 object register extends register_Scope0.register
               /*
                   -- GENERATED --
-                  DATE: Wed Apr 20 17:22:28 BRT 2016
-                  SOURCE: /home/joseph/IdeaProjects/vamojunto/view_service/app/views/register.scala.html
-                  HASH: 9517d5229c4463d243c45b3a799c786f948087dd
-                  MATRIX: 833->1|860->20|899->22|931->28
-                  LINES: 32->1|32->1|32->1|34->3
+                  DATE: Thu Apr 21 00:36:01 BRT 2016
+                  SOURCE: /home/js/workspace/VamoJunto!/vamojunto/view_service/app/views/register.scala.html
+                  HASH: 3ae2e73191d438dbc4585009a6391fcee84b0bcf
+                  MATRIX: 833->0|860->2|887->21|926->23|958->29
+                  LINES: 32->1|32->1|32->1|32->1|34->3
                   -- GENERATED --
               */
           
