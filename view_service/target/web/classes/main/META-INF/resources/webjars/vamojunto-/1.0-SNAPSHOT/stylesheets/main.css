@@ -20,6 +20,18 @@ color:red
     display: none;
 }
 
+.tab-content {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+/* remove border radius for the tab */
+
+.nav-pills > li > a {
+  border-radius: 0;
+}
+
 /* STARTS HERE */
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);

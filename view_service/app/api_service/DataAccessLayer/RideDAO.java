@@ -28,6 +28,16 @@ public class RideDAO {
         return ride;
     }
 
+    public Ride getRide(int ride_id){
+        for (Ride r : this.ridesDB) {
+            if(r.getRideId() == (ride_id)){
+                return r;
+            }
+        }
+
+        return null;
+    }
+
     public ArrayList<Ride> getAllRides(){
         return this.ridesDB;
     }

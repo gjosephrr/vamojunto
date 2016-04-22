@@ -1,6 +1,8 @@
 package api_service.DataAccessLayer;
 
 import api_service.models.Solicitation;
+import api_service.models.User;
+import api_service.models.Ride;
 import java.util.ArrayList;
 
 /**
@@ -14,11 +16,15 @@ public class SolicitationDAO {
         solicitationsDB = new ArrayList<Solicitation>();
     }
 
-    public void registerSolicitation(String requester_id,String responser_id, String ride_id){
+    public void registerSolicitation(User passenger,String responser_id, Ride ride){
         // Instantiate new solicitation
-        Solicitation solicitation = new Solicitation(requester_id,responser_id, ride_id);
+        Solicitation solicitation = new Solicitation(passenger,responser_id, ride);
         solicitationsDB.add(solicitation);
 
+    }
+
+    public ArrayList<Solicitation> getAllSolicitations(){
+        return this.solicitationsDB;
     }
 
     public void listSolicitations(){

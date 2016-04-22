@@ -82,6 +82,19 @@ public class APIController extends Controller{
         return similarDepartureRides;
     }
 
+    public static ArrayList<Solicitation> getSolicitations(String schoolId){
+        ArrayList<Solicitation> solicitations = solicitationDAO.getAllSolicitations();
+        ArrayList<Solicitation> mySolicitations = new ArrayList<Solicitation>();
+
+        for (Solicitation sol : solicitations) {
+            if(sol.getDriver().equals(schoolId)) {
+                mySolicitations.add(sol);
+            }
+        }
+
+        return mySolicitations;
+    }
+
     public static void requestRide(){
         DynamicForm dynamicForm = Form.form().bindFromRequest();
 
@@ -89,7 +102,10 @@ public class APIController extends Controller{
         String passengerId = dynamicForm.get("passenger");
         String rideId = dynamicForm.get("ride_id");
 
-        solicitationDAO.registerSolicitation(driverId, passengerId, rideId);
+        User passenger = userDAO.getUser(passengerId);
+        Ride ride = rideDAO.getRide(Integer.parseInt(rideId));
+
+        solicitationDAO.registerSolicitation(passenger, driverId, ride);
 
     }
 

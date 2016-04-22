@@ -5,6 +5,7 @@ import play.mvc.*;
 import api_service.models.User;
 import api_service.models.Ride;
 import api_service.models.City;
+import api_service.models.Solicitation;
 import java.util.ArrayList;
 import views.html.*;
 
@@ -18,6 +19,7 @@ public class ViewController extends Controller {
     ArrayList<Ride> similarDepartureRides = null;
     ArrayList<Ride> similarReturnRides = null;
     ArrayList<Ride> myRides = null;
+    ArrayList<Solicitation> mySolicitations = null;
 
     /**
      * An action that renders an HTML page with a welcome message.
@@ -32,7 +34,7 @@ public class ViewController extends Controller {
     public Result requestRide(){
         api_service.controllers.APIController.requestRide();
 
-        return ok(main_page.render(activeUser,myRides,similarDepartureRides,similarReturnRides ));
+        return ok(main_page.render(activeUser,myRides,similarDepartureRides,similarReturnRides, mySolicitations));
     }
 
     public Result register(){
@@ -46,6 +48,7 @@ public class ViewController extends Controller {
         myRides= api_service.controllers.APIController.myRides(activeUser.getSchoolId());
         similarDepartureRides = api_service.controllers.APIController.getSimilarDepartureRides(activeUser);
         similarReturnRides = api_service.controllers.APIController.getSimilarReturnRides(activeUser);
+        mySolicitations = api_service.controllers.APIController.getSolicitations(activeUser.getSchoolId());
 
         System.out.println("Saída");
         for(Ride ride: similarDepartureRides){
@@ -59,7 +62,7 @@ public class ViewController extends Controller {
 
         if(activeUser != null){
             
-            return ok(main_page.render(activeUser,myRides,similarDepartureRides,similarReturnRides ));
+            return ok(main_page.render(activeUser,myRides,similarDepartureRides,similarReturnRides , mySolicitations));
         }else{
             flash("A problem ocurred, try loggin in again");
             return ok(index.render());

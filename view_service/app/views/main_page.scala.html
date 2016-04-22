@@ -1,7 +1,8 @@
 @import api_service.models.Ride
+@import api_service.models.Solicitation
 @import java.util.ArrayList
 
-@(user: api_service.models.User, myrides:ArrayList[Ride], departrides:ArrayList[Ride], returnrides:ArrayList[Ride] )
+@(user: api_service.models.User, myrides:ArrayList[Ride], departrides:ArrayList[Ride], returnrides:ArrayList[Ride], mysolicitations: ArrayList[Solicitation] )
 
 
 @if(user != null){
@@ -21,29 +22,45 @@
                         width="200" height="300"/>
                     </div>
 
-                    <div container-fluid style="padding: 0px">
-                        <p class="message">Bem vindo @user.getName()</p>
-                        <a href="/list_rides">List rides</a>
-                        <a href="/logout">Logout</a>
-                    </div>
+                    <p class="message">Bem vindo @user.getName()</p>
+                    <a href="/list_rides">List rides</a>
+                    <a href="/logout">Logout</a>
 
                     <!-- User rides -->
-                    <div class="container-fluid profile-info" style="padding: 0px">
-                         <nav class="nav navbar-inverse">
-                            <div class="container" style="width: inherit">
-                                <p class="navbar-text center-text"><strong>Minhas viagens</strong></p>
-                            </div>
-                         </nav>
+
+
+                    <!-- TABS -->
+                    <div class="container-fluid" style="padding: 0px">
+                        <ul class="nav nav-pills">
+                            <li class="nav active">
+                                <a href="#A" style="border-radius: 0px" data-toggle="tab">Minhas viagens</a>
+                            </li>
+                            <li class="nav">
+                                <a href="#B" style="border-radius: 0px" data-toggle="tab">Solicitações</a>                                    
+                            </li>
+                        </ul>
 
                         <div>
-                            <ul style="color: #999D9D;padding-top: 15px">
-                            @for(ride <- myrides) {
-                                <li>@ride.getFinalAddress()</li>
-                            }
-                            </ul>
+                            <div class="tab-content clearfix">
+                                @if(myrides.size() == 0){
+                                    <div class="tab-pane fade in active" id="A">Você ainda não possui viagens</div>
+                                }else{
+                                    @for(ride <- myrides) {
+                                        <div class="tab-pane fade in active" id="A">@ride.getFinalAddress()</div>
+                                    }
+                                }
+
+                                @if(mysolicitations.size() == 0){
+                                    <div class="tab-pane fade" id="B">Você ainda não possui nenhuma solicitação de carona</div>
+                                }else{
+                                    @for(solic <- mysolicitations) {
+                                        <div class="tab-pane fade" id="B">@solic.getDisplayInfo()</div>
+                                    }
+                                }
+                                                           
+                            </div>
                         </div>
                     </div>
-
 
                 </div>
 
@@ -157,6 +174,17 @@
                 </div>
             </div>
         </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     }
 }else{
     redirect(routes.ViewController.index());   

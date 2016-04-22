@@ -25,6 +25,16 @@ public class UserDAO {
         usersDB.add(newUser);
     }
 
+    public User getUser(String school_id){
+        for (User u : this.usersDB) {
+            if(u.getSchoolId().equals(school_id)){
+                return u;
+            }
+        }
+
+        return null;
+    }
+
     public User registerUser(String name, String email,
                              String school_id, String password,
                              String password2, String phoneNumber,
