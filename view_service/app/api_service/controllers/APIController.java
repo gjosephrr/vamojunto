@@ -33,7 +33,7 @@ public class APIController extends Controller{
         String schoolId = dynamicForm.get("school_id");
         String password = dynamicForm.get("password");
         String password2 = dynamicForm.get("password2");
-        String phoneNumber = dynamicForm.get("phoneNumber");
+        String phoneNumber = dynamicForm.get("phone_number");
         String neighborhood = dynamicForm.get("neighborhood");
         String street = dynamicForm.get("street");
         // Ride information

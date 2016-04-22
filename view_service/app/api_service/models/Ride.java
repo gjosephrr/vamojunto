@@ -24,7 +24,9 @@ public class Ride {
     // CONSTRUTOR TEMPORÁRIO
     public Ride(){}
 
-    public Ride(String driver, String phoneNumber, String init_address, String final_address, String departure_time, int seats){
+    public Ride(String driver, String phoneNumber, String init_address, 
+        String final_address, String departure_time, int seats,
+        int ride_id){
 
             this.init_address = init_address;
             this.departure_time = departure_time;
@@ -32,6 +34,7 @@ public class Ride {
             this.phoneNumber = phoneNumber;
             this.driver_id = driver;
             this.seats = seats;
+            this.ride_id = ride_id;
 
             if(init_address.equals("bodocongo")){
                 this.trajectory = City.getTrajectory(final_address);
@@ -39,9 +42,6 @@ public class Ride {
             }else{
                 this.trajectory = City.getTrajectory(init_address);
             }
-
-            generateId();
-
 
     }
 
@@ -59,9 +59,13 @@ public class Ride {
     public String getDriver() {
         return driver_id;
     }
-    
-    public void generateId(){
 
+    public int getRideId(){
+        return this.ride_id;
+    }
+
+    public String getDriverPhone(){
+        return this.phoneNumber;
     }
 
     public String getInitAddress(){

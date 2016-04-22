@@ -19,3 +19,5 @@ POST	/login_user					controllers.ViewController.loginUser()
 GET		/logout						controllers.ViewController.logout()
 
 GET 	/list_rides					controllers.ViewController.listRides()
+
+POST 	/request_ride				controllers.ViewController.requestRide()

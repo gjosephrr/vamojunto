@@ -63,8 +63,8 @@ Seq[Any](_display_(/*1.2*/main("VamoJunto!")/*1.20*/{_display_(Seq[Any](format.r
 object index extends index_Scope0.index
               /*
                   -- GENERATED --
-                  DATE: Fri Apr 22 12:24:36 BRT 2016
-                  SOURCE: /home/joseph/IdeaProjects/vamojunto/view_service/app/views/index.scala.html
+                  DATE: Fri Apr 22 13:40:17 BRT 2016
+                  SOURCE: /home/js/workspace/VamoJunto!/vamojunto/view_service/app/views/index.scala.html
                   HASH: 0423719a6f16822e1446298e3be15dfb34eaebf1
                   MATRIX: 827->1|853->19|891->20|923->26
                   LINES: 32->1|32->1|32->1|34->3

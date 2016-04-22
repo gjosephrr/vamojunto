@@ -21,7 +21,7 @@ public class RideDAO {
                              int seats){
 
                 // Instantiate new ride
-                Ride ride = new Ride(driver, driverPhone, init_address, final_address, departure_time, seats);
+                Ride ride = new Ride(driver, driverPhone, init_address, final_address, departure_time, seats, ridesDB.size() + 1);
 
         ridesDB.add(ride);
 
@@ -41,7 +41,7 @@ public class RideDAO {
             }
 
         }if(rides.isEmpty()) {
-            rides.add(new Ride("424242", "", " ", "No rides for while"," ", 0));
+            rides.add(new Ride("424242", "", " ", "No rides for while"," ", 0, -1));
 
         }
         return rides;

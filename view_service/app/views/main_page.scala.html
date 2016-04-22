@@ -79,19 +79,66 @@
                         </nav>
                         <div>
                             <h4 style="padding-top: 15px; padding-left: 10px; color: #999D9D;">Caronas da Ida</h4>
-                                <ul style="color: #999D9D;padding-top: 15px">
-                                     @for(ride <- returnrides) {
+
+                            <div class="list-group">
+                                @for(ride <- departrides){
+                                    <div class="col-md-9">
+                                        <a class="list-group-item">
+                                                <p class="list-group-item-text">Motorista: @ride.getDriver()</p>
+                                                <p class="list-group-item-text">Telefone: @ride.getDriverPhone()</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <form action="/request_ride" method="POST">
+                                            <input name="driver" type="hidden" value="@ride.getDriver()"></input>
+                                            <input name="passenger" type="hidden" value="@user.getSchoolId()"></input>
+                                            <input name="ride_id" type="hidden" value="@ride.getRideId()"></input>
+                                            <button type="submit">
+                                                <img alt="Pedir carona!" 
+                                                    src='@routes.Assets.versioned("images/request_a_ride.png")' width="25" height="25">
+                                                </img>
+                                            </button>
+                                        </form>
+                                    </div>
+                                }
+                            </div>
+<!--                                 <ul style="color: #999D9D;padding-top: 15px">
+                                     @for(ride <- departrides) {
                                          <li>@ride</li>
                                      }
-                                </ul>
+                                </ul> -->
 
                             <h4 style="padding-top: 15px; padding-left: 10px; color: #999D9D;">Caronas da Volta</h4>
-                                <ul style="color: #999D9D;padding-top: 15px">
+                            <div class="list-group">
+                                @for(ride <- returnrides){
+                                    <div class="col-md-9">
+                                        <a class="list-group-item">
+                                                <p class="list-group-item-text">Motorista: @ride.getDriver()</p>
+                                                <p class="list-group-item-text">Telefone: @ride.getDriverPhone()</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <form action="/request_ride" method="POST">
+                                            <input name="driver" type="hidden" value="@ride.getDriver()"></input>
+                                            <input name="passenger" type="hidden" value="@user.getSchoolId()"></input>
+                                            <input name="ride_id" type="hidden" value="@ride.getRideId()"></input>
+                                            <button type="submit">
+                                                <img alt="Pedir carona!" 
+                                                    src='@routes.Assets.versioned("images/request_a_ride.png")' width="25" height="25">
+                                                </img>
+                                            </button>
+                                        </form>
+                                    </div>
+                                }
+                            </div>
+<!--                                 <ul style="color: #999D9D;padding-top: 15px">
                                     @for(ride <- returnrides) {
                                         <li>@ride</li>
                                     }
                                 </ul>
-
+ -->
                         </div>
 
                     </div>

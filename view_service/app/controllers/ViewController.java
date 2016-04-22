@@ -30,6 +30,10 @@ public class ViewController extends Controller {
         return ok(index.render());
     }
 
+    public Result requestRide(){
+        return ok(index.render());
+    }
+
     public Result register(){
         return ok(register.render());
     }

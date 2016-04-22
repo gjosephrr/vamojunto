@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/joseph/IdeaProjects/vamojunto/view_service/conf/routes
-// @DATE:Fri Apr 22 12:24:36 BRT 2016
+// @SOURCE:/home/js/workspace/VamoJunto!/vamojunto/view_service/conf/routes
+// @DATE:Fri Apr 22 15:03:17 BRT 2016
 
 package router
 
@@ -54,6 +54,7 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login_user""", """controllers.ViewController.loginUser()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.ViewController.logout()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """list_rides""", """controllers.ViewController.listRides()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """request_ride""", """controllers.ViewController.requestRide()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -180,6 +181,23 @@ class Routes(
     )
   )
 
+  // @LINE:23
+  private[this] lazy val controllers_ViewController_requestRide7_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("request_ride")))
+  )
+  private[this] lazy val controllers_ViewController_requestRide7_invoker = createInvoker(
+    ViewController_2.requestRide(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ViewController",
+      "requestRide",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """request_ride"""
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -223,6 +241,12 @@ class Routes(
     case controllers_ViewController_listRides6_route(params) =>
       call { 
         controllers_ViewController_listRides6_invoker.call(ViewController_2.listRides())
+      }
+  
+    // @LINE:23
+    case controllers_ViewController_requestRide7_route(params) =>
+      call { 
+        controllers_ViewController_requestRide7_invoker.call(ViewController_2.requestRide())
       }
   }
 }

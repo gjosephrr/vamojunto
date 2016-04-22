@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/joseph/IdeaProjects/vamojunto/view_service/conf/routes
-// @DATE:Fri Apr 22 12:24:36 BRT 2016
+// @SOURCE:/home/js/workspace/VamoJunto!/vamojunto/view_service/conf/routes
+// @DATE:Fri Apr 22 15:03:17 BRT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -39,6 +39,12 @@ package controllers {
     def loginUser(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "login_user")
+    }
+  
+    // @LINE:23
+    def requestRide(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "request_ride")
     }
   
     // @LINE:21
