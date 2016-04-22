@@ -26,12 +26,13 @@ public class ViewController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-
         return ok(index.render());
     }
 
     public Result requestRide(){
-        return ok(index.render());
+        api_service.controllers.APIController.requestRide();
+
+        return ok(main_page.render(activeUser,myRides,similarDepartureRides,similarReturnRides ));
     }
 
     public Result register(){

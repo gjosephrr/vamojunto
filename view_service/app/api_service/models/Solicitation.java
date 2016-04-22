@@ -31,4 +31,10 @@ public class Solicitation {
             this.status = status.REFUSED;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Motorista: " + this.requester_id + "\nPassageiro: " + this.responser_id +
+        "\nRide ID: " + this.ride_id;
+    }
 }

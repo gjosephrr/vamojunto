@@ -6,6 +6,9 @@ import api_service.models.User;
 import api_service.DataAccessLayer.RideDAO;
 import api_service.models.Ride;
 
+import api_service.DataAccessLayer.SolicitationDAO;
+import api_service.models.Solicitation;
+
 import play.*;
 import play.mvc.*;
 
@@ -23,6 +26,7 @@ public class APIController extends Controller{
 
     static UserDAO userDAO = new UserDAO();
     static RideDAO rideDAO = new RideDAO();
+    static SolicitationDAO solicitationDAO = new SolicitationDAO();
 
     public Result newUser(){
         DynamicForm dynamicForm = Form.form().bindFromRequest();
@@ -76,6 +80,17 @@ public class APIController extends Controller{
         }
 
         return similarDepartureRides;
+    }
+
+    public static void requestRide(){
+        DynamicForm dynamicForm = Form.form().bindFromRequest();
+
+        String driverId = dynamicForm.get("driver");
+        String passengerId = dynamicForm.get("passenger");
+        String rideId = dynamicForm.get("ride_id");
+
+        solicitationDAO.registerSolicitation(driverId, passengerId, rideId);
+
     }
 
     // AQUI PEGAMOS AS VIAGENS SIMILARES (VOLTA)

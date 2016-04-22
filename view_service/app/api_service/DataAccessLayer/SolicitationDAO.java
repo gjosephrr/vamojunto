@@ -20,6 +20,13 @@ public class SolicitationDAO {
         solicitationsDB.add(solicitation);
 
     }
+
+    public void listSolicitations(){
+        for (Solicitation sol: solicitationsDB) {
+            System.out.println(sol);
+        }
+    }
+
     public ArrayList<Solicitation> listPendingRequest(String responser_id) {
         ArrayList<Solicitation> pendingRequests = new ArrayList<Solicitation>();
         
