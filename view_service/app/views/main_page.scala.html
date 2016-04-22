@@ -1,4 +1,8 @@
-@(user: api_service.models.User)
+@import api_service.models.Ride
+@import java.util.ArrayList
+
+@(user: api_service.models.User, myrides:ArrayList[Ride], departrides:ArrayList[Ride], returnrides:ArrayList[Ride] )
+
 
 @if(user != null){
     @main("VamoJunto!"){
@@ -32,18 +36,11 @@
                          </nav>
 
                         <div>
-                            <ol>
-                                <li><span style="color: #999D9D;">1.</span>
-                                    <p style="padding-top: 15px">
-                                        Você ainda não possui viagens cadastradas :/
-                                    </p>
-                                </li>
-                                <li><span style="color: #999D9D;">2.</span>
-                                    <p style="padding-top: 15px">
-                                        Você ainda não possui viagens cadastradas :/
-                                    </p>
-                                </li>
-                            </ol>
+                            <ul style="color: #999D9D;padding-top: 15px">
+                            @for(ride <- myrides) {
+                                <li>@ride.getFinalAddress()</li>
+                            }
+                            </ul>
                         </div>
                     </div>
 
@@ -81,13 +78,20 @@
                             </div>
                         </nav>
                         <div>
-                            <ol>
-                                <li><span style="color: #999D9D;">1.</span>
-                                    <p style="padding-top: 15px">
-                                        Você ainda não possui notificações :/
-                                    </p>
-                                </li>
-                            </ol>
+                            <h4 style="padding-top: 15px; padding-left: 10px; color: #999D9D;">Caronas da Ida</h4>
+                                <ul style="color: #999D9D;padding-top: 15px">
+                                     @for(ride <- returnrides) {
+                                         <li>@ride</li>
+                                     }
+                                </ul>
+
+                            <h4 style="padding-top: 15px; padding-left: 10px; color: #999D9D;">Caronas da Volta</h4>
+                                <ul style="color: #999D9D;padding-top: 15px">
+                                    @for(ride <- returnrides) {
+                                        <li>@ride</li>
+                                    }
+                                </ul>
+
                         </div>
 
                     </div>

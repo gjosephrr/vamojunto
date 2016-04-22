@@ -32,5 +32,22 @@ public class RideDAO {
         return this.ridesDB;
     }
 
+    public ArrayList<Ride> getMyRides(String school_id){
+        ArrayList<Ride> rides = new ArrayList<Ride>();
+
+        for (Ride ride: ridesDB) {
+            if (school_id.equals(ride.getDriver())){
+                rides.add(ride);
+            }
+
+        }if(rides.isEmpty()) {
+            rides.add(new Ride("424242", "", " ", "No rides for while"," ", 0));
+
+        }
+        return rides;
+
+
+    }
+
 }
 

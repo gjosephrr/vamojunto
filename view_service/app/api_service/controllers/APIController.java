@@ -118,5 +118,9 @@ public class APIController extends Controller{
         return null;
 
     }
+    public static ArrayList<Ride> myRides(String school_id){
+        ArrayList<Ride> rides = rideDAO.getMyRides(school_id);
+        return rides;
+    }
 
 }
