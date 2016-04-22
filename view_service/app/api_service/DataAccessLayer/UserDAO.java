@@ -39,7 +39,7 @@ public class UserDAO {
 
         // Save new user
         usersDB.add(newUser);
-
+        
         return newUser;
     }
 

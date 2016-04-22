@@ -4,7 +4,7 @@ import play.*;
 import play.mvc.*;
 import api_service.models.User;
 import api_service.models.Ride;
-
+import api_service.models.City;
 import java.util.ArrayList;
 import views.html.*;
 
@@ -23,6 +23,7 @@ public class ViewController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
+
         return ok(index.render());
     }
 

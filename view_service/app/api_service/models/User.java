@@ -71,7 +71,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "Nome: " + this.name + "\nMatrícula: " + this.schoolId + "\nPapel: " + this.role;
+        return "Nome: " + this.name + "\nMatrícula: " + this.schoolId + "\nPapel: " + this.role + "\nBairro: " + this.departureRide.getInitAddress();
     }
 
     public String getName(){

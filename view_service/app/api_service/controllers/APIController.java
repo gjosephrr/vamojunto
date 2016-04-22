@@ -44,9 +44,12 @@ public class APIController extends Controller{
         int vehicleSeats = Integer.parseInt(dynamicForm.get("vehicle_seats"));
 
         // User departure and return rides
-        Ride userDeparture = rideDAO.registerRide(schoolId, phoneNumber,departureNeighborhood, arrivalNeighborhood, 
+        Ride userDeparture = rideDAO.registerRide(schoolId, phoneNumber,
+            departureNeighborhood.toLowerCase(), arrivalNeighborhood.toLowerCase(), 
             departureTime, vehicleSeats);
-        Ride userReturn = rideDAO.registerRide(schoolId, phoneNumber, arrivalNeighborhood, departureNeighborhood,
+
+        Ride userReturn = rideDAO.registerRide(schoolId, phoneNumber,
+            arrivalNeighborhood.toLowerCase(), departureNeighborhood.toLowerCase(),
             returnTime, vehicleSeats);
 
         userDAO.registerUser(name, email, schoolId,
