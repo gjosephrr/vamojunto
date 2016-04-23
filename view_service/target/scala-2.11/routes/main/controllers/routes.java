@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/joseph/IdeaProjects/vamojunto/view_service/conf/routes
-// @DATE:Fri Apr 22 21:24:32 BRT 2016
+// @SOURCE:C:/Users/Pabllo/Documents/GitHub/vamojunto/view_service/conf/routes
+// @DATE:Fri Apr 22 23:40:19 BRT 2016
 
 package controllers;
 

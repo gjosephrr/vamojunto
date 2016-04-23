@@ -1,4 +1,5 @@
 package api_service.models;
+
 import api_service.models.User;
 import api_service.models.Ride;
 
@@ -7,7 +8,7 @@ import api_service.models.Ride;
  */
 public class Solicitation {
 
-    private enum Status{
+    private enum Status {
         ACCEPTED, REFUSED, WAITING;
     }
 
@@ -17,14 +18,14 @@ public class Solicitation {
     private Ride ride;
     private Status status;
 
-    public Solicitation(User passenger,String responser_id, Ride ride){
+    public Solicitation(User passenger, String responser_id, Ride ride) {
         this.passenger = passenger;
         this.responser_id = responser_id;
         this.ride = ride;
         this.status = Status.WAITING;
     }
 
-    public String getDisplayInfo(){
+    public String getDisplayInfo() {
         String message = "";
         message += ("Nome: " + this.passenger.getName() + "\n");
         message += ("Bairro: " + this.ride.getInitAddress() + "\n");
@@ -33,17 +34,18 @@ public class Solicitation {
         return message;
     }
 
-    public String getDriver(){
+    public String getDriver() {
         return this.responser_id;
     }
 
     public User getPassenger() {
         return passenger;
     }
-    public void setStatus(boolean newStatus){
-        if(newStatus){
+
+    public void setStatus(boolean newStatus) {
+        if (newStatus) {
             this.status = status.ACCEPTED;
-        }else{
+        } else {
             this.status = status.REFUSED;
         }
     }

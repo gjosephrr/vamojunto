@@ -7,12 +7,12 @@ import java.util.HashMap;
 /**
  * Created by joseph on 20/04/16.
  */
-public class City{
+public class City {
 
     private static Map<String, String[]> mapDistricts;
 
-    static{
-    	Map<String, String[]> tempMap = new HashMap<String, String[]>();
+    static {
+        Map<String, String[]> tempMap = new HashMap<String, String[]>();
 
         tempMap.put("acacio figueiredo", new String[]{"acacio figueiredo", "presidente medici", "santa cruz", "dinamerica", "bodocongo"});
         tempMap.put("alto branco", new String[]{"alto branco", "louzeiro", "palmeira", "monte santo", "bairro universitario", "bodocongo"});
@@ -64,7 +64,7 @@ public class City{
         mapDistricts = Collections.unmodifiableMap(tempMap);
     }
 
-    public static String[] getTrajectory(String origin){
-    	return mapDistricts.get(origin);
+    public static String[] getTrajectory(String origin) {
+        return mapDistricts.get(origin);
     }
 }

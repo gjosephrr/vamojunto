@@ -8,7 +8,7 @@ import api_service.models.Ride;
 
 public class User {
 
-    private enum UserRoles{
+    private enum UserRoles {
         DRIVER, PASSENGER;
     }
 
@@ -31,7 +31,7 @@ public class User {
                 String password2, String phoneNumber,
                 String neighborhood, String street,
                 int vehicleSeats,
-                Ride departureRide, Ride returnRide){
+                Ride departureRide, Ride returnRide) {
 
         this.name = name;
         this.email = email;
@@ -43,28 +43,28 @@ public class User {
         this.departureRide = departureRide;
         this.returnRide = returnRide;
 
-        if(vehicleSeats != 0){
+        if (vehicleSeats != 0) {
             userBecomeDriver(vehicleSeats);
-        }else{
+        } else {
             this.role = UserRoles.PASSENGER;
         }
 
     }
 
-    public void userBecomeDriver(int vehicleSeats){
+    public void userBecomeDriver(int vehicleSeats) {
         this.vehicleSeats = vehicleSeats;
         this.role = UserRoles.DRIVER;
     }
 
-    public Ride getDepartureRide(){
+    public Ride getDepartureRide() {
         return this.departureRide;
     }
 
-    public Ride getReturnRide(){
+    public Ride getReturnRide() {
         return this.returnRide;
     }
 
-    public boolean validateSchoolId(){
+    public boolean validateSchoolId() {
         // TODO
         return true;
     }
@@ -74,27 +74,27 @@ public class User {
         return "Nome: " + this.name + "\nMatrícula: " + this.schoolId + "\nPapel: " + this.role + "\nBairro: " + this.departureRide.getInitAddress();
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public String getEmail(){
+    public String getEmail() {
         return this.email;
     }
 
-    public String getPhoneNumber(){
+    public String getPhoneNumber() {
         return this.phoneNumber;
     }
 
-    public String getNeighborhood(){
+    public String getNeighborhood() {
         return this.neighborhood;
     }
 
-    public String getStreet(){
+    public String getStreet() {
         return this.street;
     }
 
-    public String getSchoolId(){
+    public String getSchoolId() {
         return this.schoolId;
     }
 

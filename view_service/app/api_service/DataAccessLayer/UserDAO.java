@@ -1,10 +1,11 @@
 package api_service.DataAccessLayer;
 
 import api_service.models.User;
+
 import java.util.ArrayList;
+
 import api_service.models.Ride;
 
-// TEMPORÁRIO
 /**
  * Created by js on 19/04/16.
  */
@@ -12,22 +13,14 @@ public class UserDAO {
 
     private ArrayList<User> usersDB;
 
-    public UserDAO(){
+    public UserDAO() {
         usersDB = new ArrayList<User>();
 
-        // USUÁRIO DE TESTE, REMOVER DEPOIS
-        Ride userDeparture = new Ride();
-        Ride userReturn = new Ride();
-
-        User newUser = registerUser("biscoito", "biscoito@gmail.com", "424242",
-            "123", "123", "424242", "far away", "uma aí", 0, userDeparture, userReturn);
-
-        usersDB.add(newUser);
     }
 
-    public User getUser(String school_id){
+    public User getUser(String school_id) {
         for (User u : this.usersDB) {
-            if(u.getSchoolId().equals(school_id)){
+            if (u.getSchoolId().equals(school_id)) {
                 return u;
             }
         }
@@ -40,7 +33,7 @@ public class UserDAO {
                              String password2, String phoneNumber,
                              String neighborhood, String street,
                              int vehicleSeats,
-                             Ride departureRide, Ride returnRide){
+                             Ride departureRide, Ride returnRide) {
 
         // Instantiate new user
         User newUser = new User(name, email, school_id,
@@ -49,18 +42,11 @@ public class UserDAO {
 
         // Save new user
         usersDB.add(newUser);
-        
+
         return newUser;
     }
 
-    // TEMP
-    public void listUsers(){
-        for (User user: usersDB) {
-            System.out.println(user);
-            System.out.println();
-        }
-    }
-    
+
     public User authenticateUser(String school_id, String password) {
         for (User user : usersDB) {
             if (user.getSchoolId().equals(school_id) && user.getPassword().equals(password)) {

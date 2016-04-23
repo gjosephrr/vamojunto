@@ -6,7 +6,9 @@ import api_service.models.User;
 import api_service.models.Ride;
 import api_service.models.City;
 import api_service.models.Solicitation;
+
 import java.util.ArrayList;
+
 import views.html.*;
 
 /**
@@ -31,45 +33,45 @@ public class ViewController extends Controller {
         return ok(index.render());
     }
 
-    public Result requestRide(){
+    public Result requestRide() {
         api_service.controllers.APIController.requestRide();
 
-        return ok(main_page.render(activeUser,myRides,similarDepartureRides,similarReturnRides, mySolicitations));
+        return ok(main_page.render(activeUser, myRides, similarDepartureRides, similarReturnRides, mySolicitations));
     }
 
-    public Result register(){
+    public Result register() {
         return ok(register.render());
     }
 
-    public Result loginUser(){
+    public Result loginUser() {
         // NO MOMENTO DE LOGIN, PEGAMOS TODAS AS INFORMAÇÕES QUE SERÃO NECESSÁRIAS PARA MOSTRAR NA PÁGINA
         // (ISSO PODE SER MUDADO MAS SUGIRO QUE SEJA EM ENTREGAS FUTURAS) USAMOS A API DE CONTROLLER PARA PEGAR AS INFORMAÕES
         activeUser = api_service.controllers.APIController.login();
-        myRides= api_service.controllers.APIController.myRides(activeUser.getSchoolId());
+        myRides = api_service.controllers.APIController.myRides(activeUser.getSchoolId());
         similarDepartureRides = api_service.controllers.APIController.getSimilarDepartureRides(activeUser);
         similarReturnRides = api_service.controllers.APIController.getSimilarReturnRides(activeUser);
         mySolicitations = api_service.controllers.APIController.getSolicitations(activeUser.getSchoolId());
 
         System.out.println("Saída");
-        for(Ride ride: similarDepartureRides){
+        for (Ride ride : similarDepartureRides) {
             System.out.println(ride);
         }
 
         System.out.println("Volta");
-        for(Ride ride: similarReturnRides){
+        for (Ride ride : similarReturnRides) {
             System.out.println(ride);
         }
 
-        if(activeUser != null){
-            
-            return ok(main_page.render(activeUser,myRides,similarDepartureRides,similarReturnRides , mySolicitations));
-        }else{
+        if (activeUser != null) {
+
+            return ok(main_page.render(activeUser, myRides, similarDepartureRides, similarReturnRides, mySolicitations));
+        } else {
             flash("A problem ocurred, try loggin in again");
             return ok(index.render());
         }
     }
 
-    public Result listRides(){
+    public Result listRides() {
         api_service.controllers.APIController.listRides();
         return ok("Listing rides");
     }
@@ -80,9 +82,10 @@ public class ViewController extends Controller {
 
         return redirect(routes.ViewController.index());
     }
-    public Result registerRides(){
+
+    public Result registerRides() {
         api_service.controllers.APIController.registerRide();
-        return ok(main_page.render(activeUser,myRides,similarDepartureRides,similarReturnRides, mySolicitations));
+        return ok(main_page.render(activeUser, myRides, similarDepartureRides, similarReturnRides, mySolicitations));
     }
 
 }
