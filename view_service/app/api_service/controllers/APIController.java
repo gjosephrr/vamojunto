@@ -61,7 +61,7 @@ public class APIController extends Controller{
                 neighborhood, street, vehicleSeats,
                 userDeparture, userReturn);
 
-        return ok(dynamicForm.get("school_id"));
+        return ok(index.render());
     }
 
     // AQUI PEGAMOS AS VIAGENS SIMILARES (SAÍDA)
@@ -152,6 +152,31 @@ public class APIController extends Controller{
     public static ArrayList<Ride> myRides(String school_id){
         ArrayList<Ride> rides = rideDAO.getMyRides(school_id);
         return rides;
+    }
+
+    public static void registerRide(){
+        DynamicForm dynamicForm = Form.form().bindFromRequest();
+
+        String schoolId = dynamicForm.get("school_id");
+        String phoneNumber = dynamicForm.get("phone_number");
+        String departureNeighborhood = dynamicForm.get("departure_neighborhood");
+        String arrivalNeighborhood = dynamicForm.get("arrival_neighborhood");
+        String departureTime = dynamicForm.get("departure_timestamp");
+        String returnTime = dynamicForm.get("return_timestamp");
+        int vehicleSeats = Integer.parseInt(dynamicForm.get("vehicle_seats"));
+
+        // User departure and return rides
+        Ride userDeparture = rideDAO.registerRide(schoolId, phoneNumber,
+                departureNeighborhood.toLowerCase(), arrivalNeighborhood.toLowerCase(),
+                departureTime, vehicleSeats);
+
+        Ride userReturn = rideDAO.registerRide(schoolId, phoneNumber,
+                arrivalNeighborhood.toLowerCase(), departureNeighborhood.toLowerCase(),
+                returnTime, vehicleSeats);
+
+
+            System.out.println(userReturn);
+
     }
 
 }

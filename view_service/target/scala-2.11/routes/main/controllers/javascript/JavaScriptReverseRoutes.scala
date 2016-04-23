@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/js/workspace/VamoJunto!/vamojunto/view_service/conf/routes
-// @DATE:Fri Apr 22 15:03:17 BRT 2016
+// @SOURCE:/home/joseph/IdeaProjects/vamojunto/view_service/conf/routes
+// @DATE:Fri Apr 22 21:24:32 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -42,6 +42,16 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:25
+    def registerRides: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ViewController.registerRides",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "register_ride"})
+        }
+      """
+    )
   
     // @LINE:17
     def loginUser: JavaScriptReverseRoute = JavaScriptReverseRoute(

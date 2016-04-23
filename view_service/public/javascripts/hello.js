@@ -1,3 +1,5 @@
+document.getElementById('formi').style.display = 'none';
+
 if (window.console) {
   console.log("Welcome to your Play application's JavaScript!");
 }
@@ -10,6 +12,16 @@ function initMap() {
     zoom: 15
   });
 }
+//Function To Display Popup
+function div_show() {
+  document.getElementById('formi').style.display = 'block';
+}
+//Function to Hide Popup
+function div_hide(){
+  document.getElementById('formi').style.display = "none";
+}
+
+
 
 /*---------------------------------------------------------*/
 // Function that executes on click of first next button.
@@ -38,3 +50,5 @@ document.getElementById("second").style.display = "block";
 document.getElementById("active2").style.color = "red";
 document.getElementById("active3").style.color = "gray";
 }
+
+

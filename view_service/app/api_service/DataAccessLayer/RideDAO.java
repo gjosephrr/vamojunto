@@ -50,9 +50,6 @@ public class RideDAO {
                 rides.add(ride);
             }
 
-        }if(rides.isEmpty()) {
-            rides.add(new Ride("424242", "", " ", "No rides for while"," ", 0, -1));
-
         }
         return rides;
 

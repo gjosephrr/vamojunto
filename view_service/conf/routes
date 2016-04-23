@@ -21,3 +21,5 @@ GET		/logout						controllers.ViewController.logout()
 GET 	/list_rides					controllers.ViewController.listRides()
 
 POST 	/request_ride				controllers.ViewController.requestRide()
+
+POST    /register_ride              controllers.ViewController.registerRides()

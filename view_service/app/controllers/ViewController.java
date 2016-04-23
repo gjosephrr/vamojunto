@@ -80,4 +80,9 @@ public class ViewController extends Controller {
 
         return redirect(routes.ViewController.index());
     }
+    public Result registerRides(){
+        api_service.controllers.APIController.registerRide();
+        return ok(main_page.render(activeUser,myRides,similarDepartureRides,similarReturnRides, mySolicitations));
+    }
+
 }

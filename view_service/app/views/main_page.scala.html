@@ -8,6 +8,8 @@
 @if(user != null){
     @main("VamoJunto!"){
 
+
+
         <!-- NOTE: This is only a first draft, a lot in this file will change, including the way we add the map -->
         <div class="container-fluid">
             <div class="row">
@@ -15,16 +17,24 @@
                 <!-- Left column -->
                 <div class="col-md-2 column" style="padding: 0px">
 
-                    <!-- User profile picture -->
+                    <form action="/logout">
+                        <button type="submit" >
+                            <img alt="Logout"
+                            src='@routes.Assets.versioned("images/logout.png")' width="25" height="25">
+                            </img>
+                        </button>
+                    </form>
+
+                        <!-- User profile picture -->
                     <div class="container-fluid profile-picture" style="padding: 0px">
                         <img src="@routes.Assets.versioned("images/biscoito.png")"
                         class="img-circle img-responsive center-block"
                         width="200" height="300"/>
                     </div>
 
-                    <p class="message">Bem vindo @user.getName()</p>
-                    <a href="/list_rides">List rides</a>
-                    <a href="/logout">Logout</a>
+                    <div container-fluid style="padding: 10px; color: #FFFFFF; text-align:center">
+                        <h4><p class="message">Olá! @user.getName()</p><h4>
+                    </div>
 
                     <!-- User rides -->
 
@@ -46,7 +56,7 @@
                                     <div class="tab-pane fade in active" id="A">Você ainda não possui viagens</div>
                                 }else{
                                     @for(ride <- myrides) {
-                                        <div class="tab-pane fade in active" id="A">@ride.getFinalAddress()</div>
+                                        <div class="tab-pane fade in active" id="A">@ride</div>
                                     }
                                 }
 
@@ -74,6 +84,32 @@
 
                     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
                     async defer></script>
+
+
+                    <div class="form" id="formi" style="display: none;">
+                        <form class="register-form" action="" method="post">
+
+                            <div id="thirdi">
+                                <input name="school_id" type="text" placeholder="Matricula" required autofocus>
+                                <input name="phoneNumber" type="text" placeholder="Telefone" required autofocus>
+                                <input name="departure_neighborhood" type="text" placeholder="Bairro de origem" required autofocus>
+                                <input name="arrival_neighborhood" type="text" placeholder="Bairro destino" required autofocus>
+                                <p class="message">Seu horário de partida</p>
+                                <input type="time" name="departure_timestamp" step="1">
+                                <p class="message">Seu horário de retorno</p>
+                                <input type="time" name="return_timestamp" step="1">
+                                <p class="message"> insira a quantidade de vagas disponíveis:</p>
+                                <input name="vehicle_seats" type="number" value="0" placeholder="Número de vagas no seu veículo">
+                                <p></p>
+                                <button onclick="div_hide()" type="submit">Cadastrar</button>
+                                <p></p>
+                                <button onclick="div_hide()" type="button">Sair</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+
 
                     <style>
                         #floating-list{
@@ -169,11 +205,13 @@
                         }
                     </style>
                     <div class="container-fluid" >
-                        <button type="button" id="floating-button" class="btn btn-primary btn-lg"><strong>Nova viagem</strong></button>
+                        <button onclick="div_show()" type="button" id="floating-button" class="btn btn-primary btn-lg"><strong>Nova viagem</strong></button>
                     </div>
                 </div>
             </div>
         </div>
+
+
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 

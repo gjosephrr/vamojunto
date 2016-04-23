@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/js/workspace/VamoJunto!/vamojunto/view_service/conf/routes
-// @DATE:Fri Apr 22 15:03:17 BRT 2016
+// @SOURCE:/home/joseph/IdeaProjects/vamojunto/view_service/conf/routes
+// @DATE:Fri Apr 22 21:24:32 BRT 2016
 
 package router
 
@@ -55,6 +55,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.ViewController.logout()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """list_rides""", """controllers.ViewController.listRides()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """request_ride""", """controllers.ViewController.requestRide()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register_ride""", """controllers.ViewController.registerRides()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -198,6 +199,23 @@ class Routes(
     )
   )
 
+  // @LINE:25
+  private[this] lazy val controllers_ViewController_registerRides8_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("register_ride")))
+  )
+  private[this] lazy val controllers_ViewController_registerRides8_invoker = createInvoker(
+    ViewController_2.registerRides(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ViewController",
+      "registerRides",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """register_ride"""
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -247,6 +265,12 @@ class Routes(
     case controllers_ViewController_requestRide7_route(params) =>
       call { 
         controllers_ViewController_requestRide7_invoker.call(ViewController_2.requestRide())
+      }
+  
+    // @LINE:25
+    case controllers_ViewController_registerRides8_route(params) =>
+      call { 
+        controllers_ViewController_registerRides8_invoker.call(ViewController_2.registerRides())
       }
   }
 }

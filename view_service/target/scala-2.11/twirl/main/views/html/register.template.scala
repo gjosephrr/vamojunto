@@ -93,8 +93,8 @@ Seq[Any](format.raw/*1.1*/("""﻿"""),_display_(/*1.3*/main("Cadastre-se")/*1.22
 object register extends register_Scope0.register
               /*
                   -- GENERATED --
-                  DATE: Fri Apr 22 13:40:17 BRT 2016
-                  SOURCE: /home/js/workspace/VamoJunto!/vamojunto/view_service/app/views/register.scala.html
+                  DATE: Fri Apr 22 20:01:49 BRT 2016
+                  SOURCE: /home/joseph/IdeaProjects/vamojunto/view_service/app/views/register.scala.html
                   HASH: a3922717bde1861a4cb5bad033bff3ae1c808b36
                   MATRIX: 833->0|860->2|887->21|926->23|958->29
                   LINES: 32->1|32->1|32->1|32->1|34->3
