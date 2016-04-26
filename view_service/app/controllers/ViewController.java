@@ -47,22 +47,13 @@ public class ViewController extends Controller {
         // NO MOMENTO DE LOGIN, PEGAMOS TODAS AS INFORMAÇÕES QUE SERÃO NECESSÁRIAS PARA MOSTRAR NA PÁGINA
         // (ISSO PODE SER MUDADO MAS SUGIRO QUE SEJA EM ENTREGAS FUTURAS) USAMOS A API DE CONTROLLER PARA PEGAR AS INFORMAÕES
         activeUser = api_service.controllers.APIController.login();
-        myRides = api_service.controllers.APIController.myRides(activeUser.getSchoolId());
-        similarDepartureRides = api_service.controllers.APIController.getSimilarDepartureRides(activeUser);
-        similarReturnRides = api_service.controllers.APIController.getSimilarReturnRides(activeUser);
-        mySolicitations = api_service.controllers.APIController.getSolicitations(activeUser.getSchoolId());
-
-        System.out.println("Saída");
-        for (Ride ride : similarDepartureRides) {
-            System.out.println(ride);
-        }
-
-        System.out.println("Volta");
-        for (Ride ride : similarReturnRides) {
-            System.out.println(ride);
-        }
 
         if (activeUser != null) {
+
+            myRides = api_service.controllers.APIController.myRides(activeUser.getSchoolId());
+            similarDepartureRides = api_service.controllers.APIController.getSimilarDepartureRides(activeUser);
+            similarReturnRides = api_service.controllers.APIController.getSimilarReturnRides(activeUser);
+            mySolicitations = api_service.controllers.APIController.getSolicitations(activeUser.getSchoolId());
 
             return ok(main_page.render(activeUser, myRides, similarDepartureRides, similarReturnRides, mySolicitations));
         } else {

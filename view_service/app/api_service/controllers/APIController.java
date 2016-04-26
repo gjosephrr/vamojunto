@@ -132,25 +132,15 @@ public class APIController extends Controller{
         String schoolId = dynamicForm.get("school_id");
         String password = dynamicForm.get("password");
 
-        return userDAO.authenticateUser(schoolId,password);
+        return userDAO.authenticateUser(schoolId, password);
+
 
     }
 
-    public static void listRides(){
-        ArrayList<Ride> rides = rideDAO.getAllRides();
-        System.out.println("entrou");
-        for(Ride ride: rides){
-            System.out.println(ride);
-        }
-    }
 
-    public ArrayList<Ride> notifications(){
-
-        return null;
-
-    }
     public static ArrayList<Ride> myRides(String school_id){
         ArrayList<Ride> rides = rideDAO.getMyRides(school_id);
+        System.out.println(rides.size());
         return rides;
     }
 

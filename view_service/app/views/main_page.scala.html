@@ -56,7 +56,7 @@
                                     <div class="tab-pane fade in active" id="A">Você ainda não possui viagens</div>
                                 }else{
                                     @for(ride <- myrides) {
-                                        <div class="tab-pane fade in active" id="A">@ride</div>
+                                        <div class="tab-pane fade in active" id="A">@ride.toString()</div>
                                     }
                                 }
 
@@ -87,7 +87,7 @@
 
 
                     <div class="form" id="formi" style="display: none;">
-                        <form class="register-form" action="" method="post">
+                        <form class="register-form" action="/register_ride" method="post">
 
                             <div id="thirdi">
                                 <input name="school_id" type="text" placeholder="Matricula" required autofocus>
