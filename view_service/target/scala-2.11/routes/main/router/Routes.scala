@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/joseph/IdeaProjects/vamojunto/view_service/conf/routes
-// @DATE:Mon Apr 25 22:07:05 BRT 2016
+// @SOURCE:/home/js/workspace/VamoJunto!/vamojunto/view_service/conf/routes
+// @DATE:Wed May 04 15:43:55 BRT 2016
 
 package router
 
@@ -53,7 +53,6 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """new_user""", """api_service.controllers.APIController.newUser()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login_user""", """controllers.ViewController.loginUser()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.ViewController.logout()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """list_rides""", """controllers.ViewController.listRides()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """request_ride""", """controllers.ViewController.requestRide()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register_ride""", """controllers.ViewController.registerRides()"""),
     Nil
@@ -131,7 +130,7 @@ class Routes(
     )
   )
 
-  // @LINE:17
+  // @LINE:16
   private[this] lazy val controllers_ViewController_loginUser4_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login_user")))
   )
@@ -143,12 +142,12 @@ class Routes(
       "loginUser",
       Nil,
       "POST",
-      """POST    /login_user                 api_service.controllers.APIController.login()""",
+      """""",
       this.prefix + """login_user"""
     )
   )
 
-  // @LINE:19
+  // @LINE:18
   private[this] lazy val controllers_ViewController_logout5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
   )
@@ -165,28 +164,11 @@ class Routes(
     )
   )
 
-  // @LINE:21
-  private[this] lazy val controllers_ViewController_listRides6_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("list_rides")))
-  )
-  private[this] lazy val controllers_ViewController_listRides6_invoker = createInvoker(
-    ViewController_2.listRides(),
-    HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.ViewController",
-      "listRides",
-      Nil,
-      "GET",
-      """""",
-      this.prefix + """list_rides"""
-    )
-  )
-
-  // @LINE:23
-  private[this] lazy val controllers_ViewController_requestRide7_route = Route("POST",
+  // @LINE:20
+  private[this] lazy val controllers_ViewController_requestRide6_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("request_ride")))
   )
-  private[this] lazy val controllers_ViewController_requestRide7_invoker = createInvoker(
+  private[this] lazy val controllers_ViewController_requestRide6_invoker = createInvoker(
     ViewController_2.requestRide(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -199,11 +181,11 @@ class Routes(
     )
   )
 
-  // @LINE:25
-  private[this] lazy val controllers_ViewController_registerRides8_route = Route("POST",
+  // @LINE:22
+  private[this] lazy val controllers_ViewController_registerRides7_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("register_ride")))
   )
-  private[this] lazy val controllers_ViewController_registerRides8_invoker = createInvoker(
+  private[this] lazy val controllers_ViewController_registerRides7_invoker = createInvoker(
     ViewController_2.registerRides(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -243,34 +225,28 @@ class Routes(
         api_service_controllers_APIController_newUser3_invoker.call(APIController_0.newUser())
       }
   
-    // @LINE:17
+    // @LINE:16
     case controllers_ViewController_loginUser4_route(params) =>
       call { 
         controllers_ViewController_loginUser4_invoker.call(ViewController_2.loginUser())
       }
   
-    // @LINE:19
+    // @LINE:18
     case controllers_ViewController_logout5_route(params) =>
       call { 
         controllers_ViewController_logout5_invoker.call(ViewController_2.logout())
       }
   
-    // @LINE:21
-    case controllers_ViewController_listRides6_route(params) =>
+    // @LINE:20
+    case controllers_ViewController_requestRide6_route(params) =>
       call { 
-        controllers_ViewController_listRides6_invoker.call(ViewController_2.listRides())
+        controllers_ViewController_requestRide6_invoker.call(ViewController_2.requestRide())
       }
   
-    // @LINE:23
-    case controllers_ViewController_requestRide7_route(params) =>
+    // @LINE:22
+    case controllers_ViewController_registerRides7_route(params) =>
       call { 
-        controllers_ViewController_requestRide7_invoker.call(ViewController_2.requestRide())
-      }
-  
-    // @LINE:25
-    case controllers_ViewController_registerRides8_route(params) =>
-      call { 
-        controllers_ViewController_registerRides8_invoker.call(ViewController_2.registerRides())
+        controllers_ViewController_registerRides7_invoker.call(ViewController_2.registerRides())
       }
   }
 }

@@ -13,12 +13,9 @@ GET     /register                   controllers.ViewController.register()
 
 POST    /new_user                   api_service.controllers.APIController.newUser()
 
-#POST    /login_user                 api_service.controllers.APIController.login()
 POST	/login_user					controllers.ViewController.loginUser()
 
 GET		/logout						controllers.ViewController.logout()
-
-GET 	/list_rides					controllers.ViewController.listRides()
 
 POST 	/request_ride				controllers.ViewController.requestRide()
 

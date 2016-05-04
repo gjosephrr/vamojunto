@@ -133,10 +133,7 @@ public class APIController extends Controller{
         String password = dynamicForm.get("password");
 
         return userDAO.authenticateUser(schoolId, password);
-
-
     }
-
 
     public static ArrayList<Ride> myRides(String school_id){
         ArrayList<Ride> rides = rideDAO.getMyRides(school_id);
