@@ -2,22 +2,24 @@
 @import api_service.models.Solicitation
 @import java.util.ArrayList
 
-@(user: api_service.models.User, myrides:ArrayList[Ride], departrides:ArrayList[Ride], returnrides:ArrayList[Ride], mysolicitations: ArrayList[Solicitation] )
+@(isLoggedIn: Boolean, user: api_service.models.User, myrides:ArrayList[Ride],
+        departrides:ArrayList[Ride], returnrides:ArrayList[Ride],
+        mysolicitations: ArrayList[Solicitation])
 
+@main("VamoJunto!"){
 
-@if(user != null){
-    @main("VamoJunto!"){
-
-
-
-        <!-- NOTE: This is only a first draft, a lot in this file will change, including the way we add the map -->
-        <div class="container-fluid">
-            <div class="row">
-
+    <!-- NOTE: This is only a first draft, a lot in this file will change, including the way we add the map -->
+    <div class="container-fluid">
+        <div class="row">
                 <!-- Left column -->
-                <div class="col-md-2 column" style="padding: 0px">
+                    <div class="col-md-2 column" style="padding: 0px">
 
-                    <form action="/logout">
+                        @*<a href="@routes.ViewController.logoutUser()">
+                            <img alt="Logout"src='@routes.Assets.versioned("images/logout.png")' width="25" height="25">
+                            </img>
+                        </a>*@
+
+                    <form action="@routes.ViewController.logoutUser()">
                         <button type="submit" >
                             <img alt="Logout"
                             src='@routes.Assets.versioned("images/logout.png")' width="25" height="25">
@@ -33,11 +35,8 @@
                     </div>
 
                     <div container-fluid style="padding: 10px; color: #FFFFFF; text-align:center">
-                        <h4><p class="message">Olá! @user.getName()</p><h4>
+                        <h4><p class="message">Olá! @user.getName()</p></h4>
                     </div>
-
-                    <!-- User rides -->
-
 
                     <!-- TABS -->
                     <div class="container-fluid" style="padding: 0px">
@@ -223,7 +222,4 @@
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    }
-}else{
-    redirect(routes.ViewController.index());   
 }

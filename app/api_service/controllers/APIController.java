@@ -1,15 +1,14 @@
 package api_service.controllers;
 
-import api_service.DataAccessLayer.UserDAO;
+import DataAccessLayer.UserDAO;
 import api_service.models.User;
 
-import api_service.DataAccessLayer.RideDAO;
+import DataAccessLayer.RideDAO;
 import api_service.models.Ride;
 
-import api_service.DataAccessLayer.SolicitationDAO;
+import DataAccessLayer.SolicitationDAO;
 import api_service.models.Solicitation;
 
-import play.*;
 import play.mvc.*;
 
 import views.html.*;
@@ -17,7 +16,6 @@ import play.data.DynamicForm;
 import play.data.Form;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by js on 19/04/16.

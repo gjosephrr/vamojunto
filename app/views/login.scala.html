@@ -1,0 +1,7 @@
+@(page: String, isLoggedIn: Boolean, userInfo: api_service.models.User, loginForm: Form[views.formdata.LoginFormData])
+
+@import forms._
+
+@main(page) {
+        @loginform(routes.ViewController.postLogin(), loginForm("school_id"), loginForm("password"))
+}

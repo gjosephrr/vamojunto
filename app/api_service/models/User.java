@@ -64,16 +64,6 @@ public class User {
         return this.returnRide;
     }
 
-    public boolean validateSchoolId() {
-        // TODO
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Nome: " + this.name + "\nMatrícula: " + this.schoolId + "\nPapel: " + this.role + "\nBairro: " + this.departureRide.getInitAddress();
-    }
-
     public String getName() {
         return this.name;
     }
@@ -101,4 +91,10 @@ public class User {
     public String getPassword() {
         return this.password;
     }
+
+    @Override
+    public String toString() {
+        return "Nome: " + this.name + "\nMatrícula: " + this.schoolId + "\nPapel: " + this.role + "\nBairro: " + this.departureRide.getInitAddress();
+    }
+
 }
