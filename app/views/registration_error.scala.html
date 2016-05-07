@@ -1,0 +1,36 @@
+@(errors: ArrayList[String])
+
+@main("Registration error - VamoJunto!"){
+
+    <div class="login-page">
+        <h2>Seus dados cadastrais contém alguns erros:</h2>
+
+        <style>
+            .without-margin{
+                margin: 0px;
+                padding: 0px;
+            }
+        </style>
+
+        <div class="form">
+            @for(error <- errors) {
+                <div class="row without-margin">
+                    <div class="alert alert-danger" role="alert">
+                        <div class="container-fluid without-margin">
+                            <div class="col-md-2 without-margin">
+                                <span class="glyphicon glyphicon-alert"
+                                aria-hidden="true" style="font-size:30px"></span>
+                            </div>
+                            <div class="col-md-10 without-margin">
+                                <p class="without-margin">@(error)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <a href="/register"><button>Tente novamente</button></a>
+        </div>
+
+
+    </div>
+}

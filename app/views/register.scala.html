@@ -8,9 +8,9 @@
             
                 <div id="first">
                     <input name="name" type="text" placeholder="Nome" required autofocus>
-                    <input name="email" type="email" placeholder="Email" required autofocus>
-                    <input name="neighborhood" type="text" placeholder="Bairro" required autofocus>
-                    <input name="street" type="text" placeholder="Rua" required autofocus>
+                    <input name="email" type="email" placeholder="Email" required>
+                    <input name="neighborhood" type="text" placeholder="Bairro" required>
+                    <input name="street" type="text" placeholder="Rua" required>
                     <input name="phone_number" type="text" placeholder="Telefone" required/>
                     <button id="next_btn1" onclick="next_step1()" type="button">Próximo</button>
                 </div>
@@ -25,14 +25,14 @@
                 </div>
                 
                 <div id="third">
-                    <input name="departure_neighborhood" type="text" placeholder="Bairro de origem" required autofocus>
-                    <input name="arrival_neighborhood" type="text" placeholder="Bairro destino" required autofocus>
+                    <input name="departure_neighborhood" type="text" placeholder="Bairro de origem" required>
+                    <input name="arrival_neighborhood" type="text" placeholder="Bairro destino" required>
                     <p class="message">Seu horário de partida</p>
-                    <input type="time" name="departure_timestamp" step="1">
+                    <input type="time" name="departure_timestamp" step="1" required>
                     <p class="message">Seu horário de retorno</p>
-                    <input type="time" name="return_timestamp" step="1">
+                    <input type="time" name="return_timestamp" step="1" required>
                     <p class="message">Se você também é motorista, insira <br />a quantidade de vagas disponíveis:</p>
-                    <input name="vehicle_seats" type="number" value="0" placeholder="Número de vagas no seu veículo">
+                    <input name="vehicle_seats" type="number" value="0" placeholder="Número de vagas no seu veículo" required>
                     <button id="pre_btn2" onclick="prev_step2()" type="button">Voltar</button>
                     <p></p>
                     <button type="submit">Cadastrar</button>

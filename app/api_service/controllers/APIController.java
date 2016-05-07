@@ -15,6 +15,7 @@ import views.html.*;
 import play.data.DynamicForm;
 import play.data.Form;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -45,21 +46,56 @@ public class APIController extends Controller{
         String returnTime = dynamicForm.get("return_timestamp");
         int vehicleSeats = Integer.parseInt(dynamicForm.get("vehicle_seats"));
 
-        // User departure and return rides
-        Ride userDeparture = rideDAO.registerRide(schoolId, phoneNumber,
-            departureNeighborhood.toLowerCase(), arrivalNeighborhood.toLowerCase(), 
-            departureTime, vehicleSeats);
+        ArrayList<String> errors = checkErrors(schoolId, password, password2, phoneNumber);
 
-        Ride userReturn = rideDAO.registerRide(schoolId, phoneNumber,
-            arrivalNeighborhood.toLowerCase(), departureNeighborhood.toLowerCase(),
-            returnTime, vehicleSeats);
+        if(errors == null) {
 
-        userDAO.registerUser(name, email, schoolId,
-                password, password2, phoneNumber,
-                neighborhood, street, vehicleSeats,
-                userDeparture, userReturn);
+            // User departure and return rides
+            Ride userDeparture = rideDAO.registerRide(schoolId, phoneNumber,
+                    departureNeighborhood.toLowerCase(), arrivalNeighborhood.toLowerCase(),
+                    departureTime, vehicleSeats);
 
-        return ok(index.render());
+            Ride userReturn = rideDAO.registerRide(schoolId, phoneNumber,
+                    arrivalNeighborhood.toLowerCase(), departureNeighborhood.toLowerCase(),
+                    returnTime, vehicleSeats);
+
+            userDAO.registerUser(name, email, schoolId,
+                    password, password2, phoneNumber,
+                    neighborhood, street, vehicleSeats,
+                    userDeparture, userReturn);
+
+            return ok(index.render());
+        }else{
+            return ok(registration_error.render(errors));
+        }
+    }
+
+    private ArrayList<String> checkErrors(String schoolId, String password1, String password2, String phoneNumber){
+        ArrayList<String> errors = new ArrayList<String>();
+
+        if(schoolId == null || schoolId.length() <= 0 ||
+            (schoolId.length() != 9 && schoolId.length() != 7) ||
+            !schoolId.matches("\\d+")){
+            System.out.println(schoolId.length() != 9);
+            errors.add("Matrícula inválida, deve possuir 9 ou 7 caracteres, somente números");
+        }
+
+        if(UserDAO.isUser(schoolId)){
+            errors.add("Esta matrícula já consta em nossos sistemas, por favor cadastre-se com uma matrícula diferente");
+        }
+
+        if(phoneNumber == null || phoneNumber.length() != 9 || !phoneNumber.matches("\\d+")){
+            errors.add("Número de telefone inválido, digite um número de 9 dígitos");
+        }
+
+        if(password1 == null || password2 == null || !password1.equals(password2)){
+            errors.add("As senhas não coincidem, por favor digite senhas iguais");
+        }
+
+        if(errors.size() > 0)
+            return errors;
+        else
+            return null;
     }
 
     // AQUI PEGAMOS AS VIAGENS SIMILARES (SAÍDA)
