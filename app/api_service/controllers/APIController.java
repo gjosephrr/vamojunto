@@ -64,7 +64,7 @@ public class APIController extends Controller{
                     neighborhood, street, vehicleSeats,
                     userDeparture, userReturn);
 
-            return ok(index.render());
+            return ok(index.render(null));
         }else{
             return ok(registration_error.render(errors));
         }
@@ -171,7 +171,7 @@ public class APIController extends Controller{
 
     public static ArrayList<Ride> myRides(String school_id){
         ArrayList<Ride> rides = rideDAO.getMyRides(school_id);
-        System.out.println(rides.size());
+
         return rides;
     }
 

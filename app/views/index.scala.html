@@ -1,6 +1,15 @@
+@(tokenMessage: String)
+
 @main("VamoJunto!"){
 
     <div class="login-page">
+
+        @if(tokenMessage != null) {
+            <div class="alert alert-warning">
+                <strong>Warning!</strong> @tokenMessage
+            </div>
+        }
+
         <h2>Bem vindo ao VamoJunto!</h2>
         <div class="form">
             <a href="/login"><button>Entre!</button></a>

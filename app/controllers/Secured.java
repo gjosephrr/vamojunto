@@ -15,7 +15,7 @@ public class Secured extends Security.Authenticator {
 
     @Override
     public Result onUnauthorized(Context context) {
-        return redirect(routes.ViewController.login());
+        return redirect(routes.ViewController.mainDecoder("login"));
     }
 
     public static String getUser(Context ctx) {

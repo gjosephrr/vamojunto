@@ -1,17 +1,15 @@
 package controllers;
 
+import api_service.models.*;
 import play.*;
 import play.data.Form;
 import play.mvc.*;
-import api_service.models.User;
-import api_service.models.Ride;
-import api_service.models.City;
-import api_service.models.Solicitation;
 
 import java.util.ArrayList;
 
 import views.formdata.LoginFormData;
 import views.html.*;
+import java.util.Random;
 
 public class ViewController extends Controller {
 
@@ -19,9 +17,49 @@ public class ViewController extends Controller {
     ArrayList<Ride> similarReturnRides = null;
     ArrayList<Ride> myRides = null;
     ArrayList<Solicitation> mySolicitations = null;
+    AuthToken userToken = null;
 
-    public Result index() {
-        return ok(index.render());
+    public Result mainDecoder(String method){
+        if(!Secured.isLoggedIn(ctx())){
+            switch (method){
+                case "index":
+                    return index(null);
+                case "register":
+                    return register();
+                case "login":
+                    return login();
+                case "post login":
+                    return postLogin();
+
+            }
+        } else if(Secured.isLoggedIn(ctx())) {
+            if(this.userToken != null && !this.userToken.hasExpired()){
+                switch (method){
+                    case "index":
+                        return index(null);
+                    case "main page":
+                        return mainPage();
+                    case "request ride":
+                        return requestRide();
+                    case "register rides":
+                        return registerRides();
+                    case "register":
+                        return register();
+                    case "login":
+                        return login();
+                    case "post login":
+                        return postLogin();
+                }
+            } else {
+                logoutUser();
+                return index("Your authentication token has expired, please login again");
+            }
+        }
+        return index(null);
+    }
+
+    public Result index(String tokenMessage) {
+        return ok(index.render(tokenMessage));
     }
 
     public Result requestRide() {
@@ -67,7 +105,7 @@ public class ViewController extends Controller {
             Form<LoginFormData> formData = Form.form(LoginFormData.class);
             return ok(login.render("Login", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()), formData));
         }else{
-            return redirect(routes.ViewController.mainPage());
+            return redirect(routes.ViewController.mainDecoder("main page"));
         }
     }
 
@@ -83,7 +121,11 @@ public class ViewController extends Controller {
             session().clear();
             resetCurrentData();
             session("school_id", formData.get().school_id);
-            return redirect(routes.ViewController.mainPage());
+
+            this.userToken = new AuthToken();
+            this.userToken.generateToken(formData.get().school_id + new Integer(new Random().nextInt(100)).toString());
+
+            return redirect(routes.ViewController.mainDecoder("main page"));
         }
     }
 
@@ -91,7 +133,7 @@ public class ViewController extends Controller {
     public Result logoutUser(){
         session().clear();
         resetCurrentData();
-        return redirect(routes.ViewController.login());
+        return redirect(routes.ViewController.mainDecoder("login"));
     }
 
     private void resetCurrentData(){
@@ -99,5 +141,6 @@ public class ViewController extends Controller {
         this.similarReturnRides = null;
         this.myRides = null;
         this.mySolicitations = null;
+        this.userToken = null;
     }
 }

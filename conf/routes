@@ -3,24 +3,24 @@
 # ~~~~
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /                           controllers.ViewController.index()
+GET     /                           controllers.ViewController.mainDecoder(method = "index")
 
-GET     /main_page                  controllers.ViewController.mainPage()
+GET     /main_page                  controllers.ViewController.mainDecoder(method = "main page")
 
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
-POST 	/request_ride				controllers.ViewController.requestRide()
+POST 	/request_ride				controllers.ViewController.mainDecoder(method = "request ride")
 
-POST    /register_ride              controllers.ViewController.registerRides()
+POST    /register_ride              controllers.ViewController.mainDecoder(method = "register rides")
 
 # REGISTRATION ROUTES
-GET     /register                   controllers.ViewController.register()
+GET     /register                   controllers.ViewController.mainDecoder(method = "register")
 
 POST    /new_user                   api_service.controllers.APIController.newUser()
 
 # LOGIN ROUTES
-GET     /login                      controllers.ViewController.login()
+GET     /login                      controllers.ViewController.mainDecoder(method = "login")
 
-POST    /login                      controllers.ViewController.postLogin()
+POST    /login                      controllers.ViewController.mainDecoder(method = "post login")
 
 GET     /logout                     controllers.ViewController.logoutUser()

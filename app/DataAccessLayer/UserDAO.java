@@ -15,14 +15,6 @@ public class UserDAO {
 
     public UserDAO() {
         usersDB = new ArrayList<User>();
-
-                 Ride userDeparture = null;
-                Ride userReturn = null;
-
-                User newUser = registerUser("biscoito", "biscoito@gmail.com", "424242", "123", "123", "424242", "far away", "uma", 0, userDeparture, userReturn);
-
-                        usersDB.add(newUser);
-
     }
 
     public ArrayList<User> getUsersDB(){
