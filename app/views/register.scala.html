@@ -1,44 +1,44 @@
-﻿@main("Cadastre-se") {
+﻿@main(Messages("sign_up.title")) {
 
     <div class="login-page">
-        <h2>Bem vindo ao VamoJunto!</h2>
+        <h2>@Messages("global.welcome")</h2>
 
         <div class="form">
             <form class="register-form" action="/new_user" method="post">
             
                 <div id="first">
-                    <input name="name" type="text" placeholder="Nome" required autofocus>
+                    <input name="name" type="text" placeholder=@Messages("global.name") required autofocus>
                     <input name="email" type="email" placeholder="Email" required>
-                    <input name="neighborhood" type="text" placeholder="Bairro" required>
-                    <input name="street" type="text" placeholder="Rua" required>
-                    <input name="phone_number" type="text" placeholder="Telefone" required/>
-                    <button id="next_btn1" onclick="next_step1()" type="button">Próximo</button>
+                    <input name="neighborhood" type="text" placeholder=@Messages("global.neighborhood") required>
+                    <input name="street" type="text" placeholder=@Messages("global.street") required>
+                    <input name="phone_number" type="text" placeholder="@Messages("global.phone_number")" required/>
+                    <button id="next_btn1" onclick="next_step1()" type="button">@Messages("sign_up.next")</button>
                 </div>
 
                 <div id="second">
-                    <input name="school_id" type="text" placeholder="Matrícula" required/>
-                    <input name="password" type="password" placeholder="Senha" required/>
-                    <input name="password2" type="password" placeholder="Repita sua senha" required/>
-                    <button id="pre_btn1" onclick="prev_step1()" type="button">Voltar</button>
+                    <input name="school_id" type="text" placeholder="@Messages("global.school_id")" required/>
+                    <input name="password" type="password" placeholder=@Messages("global.password") required/>
+                    <input name="password2" type="password" placeholder="@Messages("sign_up.repeat_password")" required/>
+                    <button id="pre_btn1" onclick="prev_step1()" type="button">@Messages("sign_up.back")</button>
                     <p></p>
-                    <button id="next_btn2" name="next" onclick="next_step2()" type="button">Próximo</button>
+                    <button id="next_btn2" name="next" onclick="next_step2()" type="button">@Messages("sign_up.next")</button>
                 </div>
                 
                 <div id="third">
-                    <input name="departure_neighborhood" type="text" placeholder="Bairro de origem" required>
-                    <input name="arrival_neighborhood" type="text" placeholder="Bairro destino" required>
-                    <p class="message">Seu horário de partida</p>
+                    <input name="departure_neighborhood" type="text" placeholder="@Messages("global.departure_neighborhood")" required>
+                    <input name="arrival_neighborhood" type="text" placeholder="@Messages("global.arrival_neighborhood")" required>
+                    <p class="message">@Messages("global.departure_time")</p>
                     <input type="time" name="departure_timestamp" step="1" required>
-                    <p class="message">Seu horário de retorno</p>
+                    <p class="message">@Messages("global.return_time")</p>
                     <input type="time" name="return_timestamp" step="1" required>
-                    <p class="message">Se você também é motorista, insira <br />a quantidade de vagas disponíveis:</p>
-                    <input name="vehicle_seats" type="number" value="0" placeholder="Número de vagas no seu veículo" required>
-                    <button id="pre_btn2" onclick="prev_step2()" type="button">Voltar</button>
+                    <p class="message">@Messages("sign_up.available_seats")</p>
+                    <input name="vehicle_seats" type="number" value="0" placeholder="@Messages("global.number_of_available_seats")" required>
+                    <button id="pre_btn2" onclick="prev_step2()" type="button">@Messages("sign_up.back")</button>
                     <p></p>
-                    <button type="submit">Cadastrar</button>
+                    <button type="submit">@Messages("global.register")</button>
                 </div>
 
-                <p class="message">Já se cadastrou? <a href="/">Entrar</a></p>
+                <p class="message">@Messages("sign_up.signed_up") <a href="/">@Messages("sign_up.sign_in")</a></p>
             </form>
             </div>
     </div>

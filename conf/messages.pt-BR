@@ -1,0 +1,50 @@
+#
+# Messages (Portuguese)
+#
+
+# global
+global.welcome=Bem vindo ao VamoJunto!
+global.not_signed_up=Ainda não se cadastrou?
+global.create_account=Crie uma conta!
+global.school_id=Matrícula
+global.password=Senha
+global.name=Nome
+global.neighborhood=Bairro
+global.street=Rua
+global.phone_number=Telefone
+global.number_of_available_seats=Número de vagas no seu veículo
+global.departure_neighborhood=Bairro de origem
+global.arrival_neighborhood=Bairro destino
+global.departure_time=Seu horário de partida
+global.return_time=Seu horário de retorno
+global.register=Cadastrar
+
+# home
+home.sign_in=Entre!
+home.language=Idioma:
+home.language.pt_br=Português
+home.language.en_us=Inglês
+
+# sign_up
+sign_up.title=Cadastre-se
+sign_up.next=Próximo
+sign_up.signed_up=Já se cadastrou?
+sign_up.sign_in=Entrar
+sign_up.repeat_password=Repita sua senha
+sign_up.back=Voltar
+sign_up.available_seats=Se você também é motorista, insira a quantidade de vagas disponíveis:
+
+# main_page
+main_page.hello=Olá!
+main_page.my_travels=Minhas viagens
+main_page.requests=Solicitações
+main_page.no_travels=Você ainda não possui viagens
+main_page.no_ride_request=Você ainda nao possui nenhuma solicitação de carona
+main_page.notifications=Notificações
+main_page.depart_rides=Caronas da Ida
+main_page.return_rides=Caronas da Volta
+main_page.new_travel=Nova viagem
+main_page.new_travel.available_seats=Insira a quantidade de vagas disponíveis:
+main_page.new_travel.exit=Sair
+main_page.driver=Motorista:
+main_page.phone_number=Telefone:

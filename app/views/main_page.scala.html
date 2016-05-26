@@ -35,24 +35,24 @@
                     </div>
 
                     <div container-fluid style="padding: 10px; color: #FFFFFF; text-align:center">
-                        <h4><p class="message">Olá! @user.getName()</p></h4>
+                        <h4><p class="message">@Messages("main_page.hello") @user.getName()</p></h4>
                     </div>
 
                     <!-- TABS -->
                     <div class="container-fluid" style="padding: 0px">
                         <ul class="nav nav-pills">
                             <li class="nav active">
-                                <a href="#A" style="border-radius: 0px" data-toggle="tab">Minhas viagens</a>
+                                <a href="#A" style="border-radius: 0px" data-toggle="tab">@Messages("main_page.my_travels")</a>
                             </li>
                             <li class="nav">
-                                <a href="#B" style="border-radius: 0px" data-toggle="tab">Solicitações</a>                                    
+                                <a href="#B" style="border-radius: 0px" data-toggle="tab">@Messages("main_page.requests")</a>                                    
                             </li>
                         </ul>
 
                         <div>
                             <div class="tab-content clearfix">
                                 @if(myrides.size() == 0){
-                                    <div class="tab-pane fade in active" id="A">Você ainda não possui viagens</div>
+                                    <div class="tab-pane fade in active" id="A">@Messages("main_page.no_travels")</div>
                                 }else{
                                     @for(ride <- myrides) {
                                         <div class="tab-pane fade in active" id="A">@ride.toString()</div>
@@ -60,7 +60,7 @@
                                 }
 
                                 @if(mysolicitations.size() == 0){
-                                    <div class="tab-pane fade" id="B">Você ainda não possui nenhuma solicitação de carona</div>
+                                    <div class="tab-pane fade" id="B">@Messages("main_page.no_ride_request")</div>
                                 }else{
                                     @for(solic <- mysolicitations) {
                                         <div class="tab-pane fade" id="B">@solic.getDisplayInfo()</div>
@@ -89,20 +89,20 @@
                         <form class="register-form" action="/register_ride" method="post">
 
                             <div id="thirdi">
-                                <input name="school_id" type="text" placeholder="Matricula" required autofocus>
-                                <input name="phoneNumber" type="text" placeholder="Telefone" required autofocus>
-                                <input name="departure_neighborhood" type="text" placeholder="Bairro de origem" required autofocus>
-                                <input name="arrival_neighborhood" type="text" placeholder="Bairro destino" required autofocus>
-                                <p class="message">Seu horário de partida</p>
+                                <input name="school_id" type="text" placeholder="@Messages("global.school_id")" required autofocus>
+                                <input name="phoneNumber" type="text" placeholder="@Messages("global.phone_number")" required autofocus>
+                                <input name="departure_neighborhood" type="text" placeholder="@Messages("global.departure_neighborhood")" required autofocus>
+                                <input name="arrival_neighborhood" type="text" placeholder="@Messages("global.arrival_neighborhood")" required autofocus>
+                                <p class="message">@Messages("global.departure_time")</p>
                                 <input type="time" name="departure_timestamp" step="1">
-                                <p class="message">Seu horário de retorno</p>
+                                <p class="message">@Messages("global.return_time")</p>
                                 <input type="time" name="return_timestamp" step="1">
-                                <p class="message"> insira a quantidade de vagas disponíveis:</p>
-                                <input name="vehicle_seats" type="number" value="0" placeholder="Número de vagas no seu veículo">
+                                <p class="message">@Messages("main_page.new_travel.available_seats")</p>
+                                <input name="vehicle_seats" type="number" value="0" placeholder="@Messages("global.number_of_available_seats")">
                                 <p></p>
-                                <button onclick="div_hide()" type="submit">Cadastrar</button>
+                                <button onclick="div_hide()" type="submit">@Messages("global.register")</button>
                                 <p></p>
-                                <button onclick="div_hide()" type="button">Sair</button>
+                                <button onclick="div_hide()" type="button">@Messages("main_page.new_travel.exit")</button>
                             </div>
                         </form>
                     </div>
@@ -125,19 +125,19 @@
                         <nav class="nav navbar-inverse">
                             <div class="container-fluid">
                                 <div class="navbar-header">
-                                    <a href="#" class="navbar-brand">Notificações</a>
+                                    <a href="#" class="navbar-brand">@Messages("main_page.notifications")</a>
                                 </div>
                             </div>
                         </nav>
                         <div>
-                            <h4 style="padding-top: 15px; padding-left: 10px; color: #999D9D;">Caronas da Ida</h4>
+                            <h4 style="padding-top: 15px; padding-left: 10px; color: #999D9D;">@Messages("main_page.depart_rides")</h4>
 
                             <div class="list-group">
                                 @for(ride <- departrides){
                                     <div class="col-md-9">
                                         <a class="list-group-item">
-                                                <p class="list-group-item-text">Motorista: @ride.getDriver()</p>
-                                                <p class="list-group-item-text">Telefone: @ride.getDriverPhone()</p>
+                                                <p class="list-group-item-text">@Messages("main_page.driver") @ride.getDriver()</p>
+                                                <p class="list-group-item-text">"@Messages("main_page.phone_number")" @ride.getDriverPhone()</p>
                                         </a>
                                     </div>
 
@@ -161,13 +161,13 @@
                                      }
                                 </ul> -->
 
-                            <h4 style="padding-top: 15px; padding-left: 10px; color: #999D9D;">Caronas da Volta</h4>
+                            <h4 style="padding-top: 15px; padding-left: 10px; color: #999D9D;">@Messages("main_page.return_rides")</h4>
                             <div class="list-group">
                                 @for(ride <- returnrides){
                                     <div class="col-md-9">
                                         <a class="list-group-item">
-                                                <p class="list-group-item-text">Motorista: @ride.getDriver()</p>
-                                                <p class="list-group-item-text">Telefone: @ride.getDriverPhone()</p>
+                                                <p class="list-group-item-text">@Messages("main_page.driver") @ride.getDriver()</p>
+                                                <p class="list-group-item-text">"@Messages("main_page.phone_number")" @ride.getDriverPhone()</p>
                                         </a>
                                     </div>
 
@@ -204,7 +204,7 @@
                         }
                     </style>
                     <div class="container-fluid" >
-                        <button onclick="div_show()" type="button" id="floating-button" class="btn btn-primary btn-lg"><strong>Nova viagem</strong></button>
+                        <button onclick="div_show()" type="button" id="floating-button" class="btn btn-primary btn-lg"><strong>@Messages("main_page.new_travel")</strong></button>
                     </div>
                 </div>
             </div>

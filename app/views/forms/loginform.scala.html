@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="login-page">
-        <h2>Bem vindo ao VamoJunto!</h2>
+        <h2>@Messages("global.welcome")</h2>
 
         <div class="form">
                 @helper.form(reverseRoute, 'role -> "form") {
@@ -10,18 +10,18 @@
                         <div class="form-group @if(schoolIdField.hasErrors) {has-error}" >
                             <input id="@schoolIdField.id" name="@schoolIdField.name"
                                 value="@schoolIdField.value.getOrElse("")"
-                                placeholder="Matrícula" type="text" required autofocus
+                                placeholder="@Messages("global.school_id")" type="text" required autofocus
                                 style="margin: 0">
                         </div>
                         <div class="form-group @if(passwordField.hasErrors) {has-error}" >
                             <input id="@passwordField.id" name="@passwordField.name"
                                 value="@passwordField.value.getOrElse("")"
-                                placeholder="Senha" type="password" required
+                                placeholder=@Messages("global.password") type="password" required
                                 style="margin: 0">
                         </div>
 
                         <button type="submit">Login</button>
-                        <p class="message">Ainda não se cadastrou? <a href="/register">Crie uma conta!</a></p>
+                        <p class="message">@Messages("global.not_signed_up") <a href="/register">@Messages("global.create_account")</a></p>
                     </fieldset>
                 }
                 @if(flash.containsKey("error")) {

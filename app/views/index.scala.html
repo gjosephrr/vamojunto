@@ -10,10 +10,11 @@
             </div>
         }
 
-        <h2>Bem vindo ao VamoJunto!</h2>
+        <h2>@Messages("global.welcome")</h2>
         <div class="form">
-            <a href="/login"><button>Entre!</button></a>
-            <p class="message">Ainda não se cadastrou? <a href="/register">Crie uma conta!</a></p>
+            <a href="/login"><button>@Messages("home.sign_in")</button></a>
+			<p class="message">@Messages("global.not_signed_up") <a href="/register">@Messages("global.create_account")</a></p>
+			<p class="message">@Messages("home.language") <a href="language?id=1">@Messages("home.language.pt_br")</a> | <a href="language?id=2">@Messages("home.language.en_us")</a></p>
         </div>
     </div>
 }

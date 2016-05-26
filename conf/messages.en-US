@@ -1,0 +1,50 @@
+#
+# Messages (English)
+#
+
+# global
+global.welcome=Welcome to VamoJunto!
+global.not_signed_up=Not signed up yet?
+global.create_account=Create an account!
+global.school_id=School Id
+global.password=Password
+global.name=Name
+global.neighborhood=Neighborhood
+global.street=Street
+global.phone_number=Phone number
+global.number_of_available_seats=Number of available seats in your vehicle
+global.departure_neighborhood=Departure neighborhood
+global.arrival_neighborhood=Arrival neighborhood
+global.departure_time=Your departure time
+global.return_time=Your return time
+global.register=Register
+
+# home
+home.sign_in=Sign in!
+home.language=Language:
+home.language.pt_br=Portuguese
+home.language.en_us=English
+
+# sign_up
+sign_up.title=Sign up
+sign_up.next=Next
+sign_up.signed_up=Already registered?
+sign_up.sign_in=Sign in
+sign_up.repeat_password=Repeat your password
+sign_up.back=Back
+sign_up.available_seats=If you are also a driver, enter the amount of available seats:
+
+# main_page
+main_page.hello=Hello!
+main_page.my_travels=My travels
+main_page.requests=Requests
+main_page.no_travels=You still don''t have travels
+main_page.no_ride_request=You still don''t have any ride request
+main_page.notifications=Notifications
+main_page.depart_rides=Depart rides
+main_page.return_rides=Return rides
+main_page.new_travel=New travel
+main_page.new_travel.available_seats=Enter the amount of available seats:
+main_page.new_travel.exit=Exit
+main_page.driver=Driver:
+main_page.phone_number=Phone number:
