@@ -3,6 +3,8 @@ package api_service.models;
 import java.util.Date;
 import java.util.Arrays;
 import java.text.*;
+import play.i18n.*;
+
 
 /**
  * Created by joseph on 19/04/16.
@@ -105,8 +107,8 @@ public class Ride {
 
     @Override
     public String toString() {
-
-        return "Motorista: " + this.driver_id + "\nParte de: " + this.init_address;
+        String toString = Messages.get("ride.toString", this.driver_id, this.init_address);
+        return toString;
     }
 
 }

@@ -2,6 +2,8 @@ package api_service.models;
 
 import api_service.models.User;
 import api_service.models.Ride;
+import play.i18n.*;
+
 
 /**
  * Created by joseph on 19/04/16.
@@ -27,10 +29,12 @@ public class Solicitation {
 
     public String getDisplayInfo() {
         String message = "";
-        message += ("Nome: " + this.passenger.getName() + "\n");
-        message += ("Bairro: " + this.ride.getInitAddress() + "\n");
-        message += ("Horário: " + this.ride.getDepartureTime() + "\n");
-
+        String name = Messages.get("solicitation.name", this.passenger.getName());
+        String neighborhood = Messages.get("solicitation.neighborhood", this.ride.getInitAddress());
+        String time = Messages.get("solicitation.time", this.ride.getDepartureTime());
+        message += (name);
+        message += (neighborhood);
+        message += (time);
         return message;
     }
 
@@ -52,6 +56,7 @@ public class Solicitation {
 
     @Override
     public String toString() {
-        return "Motorista: " + this.passenger + "\nPassageiro: " + this.responser_id;
+        String toString = Messages.get("solicitation.toString", this.passenger, this.responser_id);
+        return toString;
     }
 }

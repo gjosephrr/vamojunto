@@ -5,6 +5,8 @@ package api_service.models;
  */
 
 import api_service.models.Ride;
+import play.i18n.*;
+
 
 public class User {
 
@@ -94,7 +96,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "Nome: " + this.name + "\nMatrícula: " + this.schoolId + "\nPapel: " + this.role + "\nBairro: " + this.departureRide.getInitAddress();
+        String toString = Messages.get("user.toString", this.name, this.schoolId, this.role, this.departureRide.getInitAddress());
+        return toString;
     }
 
 }
