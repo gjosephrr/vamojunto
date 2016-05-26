@@ -9,6 +9,7 @@ global.create_account=Crie uma conta!
 global.school_id=Matrícula
 global.password=Senha
 global.name=Nome
+glabal.email=Email
 global.neighborhood=Bairro
 global.street=Rua
 global.phone_number=Telefone
@@ -34,6 +35,10 @@ sign_up.repeat_password=Repita sua senha
 sign_up.back=Voltar
 sign_up.available_seats=Se você também é motorista, insira a quantidade de vagas disponíveis:
 
+# sign_u.erros
+sign_up.erros.registrarion = Seus dados cadastrais contém alguns erros:
+sign_up.erros.try_again = Tente Novamente
+
 # main_page
 main_page.hello=Olá!
 main_page.my_travels=Minhas viagens
@@ -48,3 +53,25 @@ main_page.new_travel.available_seats=Insira a quantidade de vagas disponíveis:
 main_page.new_travel.exit=Sair
 main_page.driver=Motorista:
 main_page.phone_number=Telefone:
+
+# api_controller
+errors.school_id = Matrícula inválida, deve possuir 9 ou 7 caracteres, somente números
+errors.school_id.occupied = Esta matrícula já consta em nossos sistemas, por favor cadastre-se com uma matrícula diferente
+errors.phone = Número de telefone inválido, digite um número de 9 dígitos
+errors.password = As senhas não coincidem, por favor digite senhas iguais
+
+# view_controller
+errors.incorret = Matrícula ou senha incorretas, tente novamente
+errors.token = Seu token de autenticação expirou, por favor faça login novamente
+
+# user
+user.toString = Nome: {0} \nMatrícula:  {1}  "\nPapel:  {2}  \nBairro:  {3}
+
+# solicitation
+solicitation.name = Nome: {0} \n
+solicitation.neighborhood = Bairro: {0} \n
+solicitation.time = Horário: {0} \n
+solicitation.toString = Motorista:  {0}  \nPassageiro:  {1}
+
+# ride
+ride.toString = Motorista:  {0}  \nParte de:  {1}

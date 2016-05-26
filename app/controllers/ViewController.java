@@ -11,6 +11,8 @@ import views.formdata.LoginFormData;
 import views.html.*;
 import java.util.Random;
 
+import play.i18n.*;
+
 public class ViewController extends Controller {
 
     ArrayList<Ride> similarDepartureRides = null;
@@ -30,6 +32,10 @@ public class ViewController extends Controller {
                     return login();
                 case "post login":
                     return postLogin();
+                case "en":
+                    return translate_en();
+                case "pt-BR":
+                    return translate_pt_BR();
 
             }
         } else if(Secured.isLoggedIn(ctx())) {
@@ -49,10 +55,15 @@ public class ViewController extends Controller {
                         return login();
                     case "post login":
                         return postLogin();
+                    case "en":
+                        return translate_en();
+                    case "pt-BR":
+                        return translate_pt_BR();
                 }
             } else {
                 logoutUser();
-                return index("Your authentication token has expired, please login again");
+                String message = Messages.get("errors.token");
+                return index(message);
             }
         }
         return index(null);
@@ -62,6 +73,14 @@ public class ViewController extends Controller {
         return ok(index.render(tokenMessage));
     }
 
+    public Result translate_en() {
+        ctx().changeLang("en-US");
+        return ok(index.render(null));
+    }
+    public Result translate_pt_BR() {
+        ctx().changeLang("pt-BR");
+        return ok(index.render(null));
+    }
     public Result requestRide() {
         api_service.controllers.APIController.requestRide();
 
@@ -113,7 +132,8 @@ public class ViewController extends Controller {
         // Get the submitted form data from the request object, and run validation.
         Form<LoginFormData> formData = Form.form(LoginFormData.class).bindFromRequest();
         if (formData.hasErrors()) {
-            flash("error", "Matrícula ou senha incorretas, tente novamente");
+            String message = Messages.get("errors.incorret");
+            flash("error", message);
             return badRequest(login.render("Login", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()), formData));
         }
         else {

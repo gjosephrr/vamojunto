@@ -18,6 +18,8 @@ import play.data.Form;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import play.i18n.*;
+
 /**
  * Created by js on 19/04/16.
  */
@@ -77,19 +79,23 @@ public class APIController extends Controller{
             (schoolId.length() != 9 && schoolId.length() != 7) ||
             !schoolId.matches("\\d+")){
             System.out.println(schoolId.length() != 9);
-            errors.add("Matrícula inválida, deve possuir 9 ou 7 caracteres, somente números");
+            String err = Messages.get("errors.school_id");
+            errors.add(err);
         }
 
         if(UserDAO.isUser(schoolId)){
-            errors.add("Esta matrícula já consta em nossos sistemas, por favor cadastre-se com uma matrícula diferente");
+            String err = Messages.get("errors.school_id.occupied");
+            errors.add(err);
         }
 
         if(phoneNumber == null || phoneNumber.length() != 9 || !phoneNumber.matches("\\d+")){
-            errors.add("Número de telefone inválido, digite um número de 9 dígitos");
+            String err = Messages.get("errors.phone");
+            errors.add(err);
         }
 
         if(password1 == null || password2 == null || !password1.equals(password2)){
-            errors.add("As senhas não coincidem, por favor digite senhas iguais");
+            String err = Messages.get("errors.password");
+            errors.add(err);
         }
 
         if(errors.size() > 0)
