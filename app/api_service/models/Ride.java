@@ -3,23 +3,38 @@ package api_service.models;
 import java.util.Date;
 import java.util.Arrays;
 import java.text.*;
+
+import com.avaje.ebean.Model;
 import play.i18n.*;
 
+import javax.persistence.*;
+import play.data.validation.Constraints;
+import com.avaje.ebean.Model;
 
 /**
  * Created by joseph on 19/04/16.
  */
-public class Ride {
+@Entity
+public class Ride extends Model{
 
     // A CLASSE RIDE PRECISA TER TAMBÉM UM ATRIBUTO ROTA, PEGAMOS DA CLASSE ESTÁTICA CIDADE, O ARRAY CORRESPONDENTE AO
     // ENDEREÇO DE PARTIDA (PENSAR SOBRE A VIAGEM DE VOLTA)
 
+    public static Model.Finder<String,Ride> find = new Model.Finder<>(Ride.class);
+
+    @Constraints.Required
     private String init_address;
+    @Constraints.Required
     private String departure_time;
+    @Constraints.Required
     private String final_address;
+    @Constraints.Required
     private String phoneNumber;
+    @Constraints.Required
     private String driver_id;
+    @Constraints.Required
     private int seats;
+    @Id
     private int ride_id;
 
     String[] trajectory;

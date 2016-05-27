@@ -14,6 +14,7 @@ public class RideDAO {
 
     public RideDAO(){
         ridesDB = new ArrayList<Ride>();
+
     }
 
     public Ride registerRide(String driver, String driverPhone,String init_address,

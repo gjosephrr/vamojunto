@@ -6,6 +6,7 @@ import play.data.Form;
 import play.mvc.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import views.formdata.LoginFormData;
 import views.html.*;
@@ -88,6 +89,11 @@ public class ViewController extends Controller {
                 myRides, similarDepartureRides,
                 similarReturnRides, mySolicitations));
     }
+
+
+
+
+
 
     public Result register() {
         return ok(register.render());

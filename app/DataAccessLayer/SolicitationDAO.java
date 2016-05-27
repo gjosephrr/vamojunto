@@ -15,6 +15,7 @@ public class SolicitationDAO {
 
     public SolicitationDAO() {
         solicitationsDB = new ArrayList<Solicitation>();
+
     }
 
     public void registerSolicitation(User passenger, String responser_id, Ride ride) {

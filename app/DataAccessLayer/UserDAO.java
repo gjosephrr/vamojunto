@@ -5,16 +5,21 @@ import api_service.models.User;
 import java.util.ArrayList;
 
 import api_service.models.Ride;
+import com.avaje.ebean.Ebean;
+import com.avaje.ebean.SqlQuery;
+import com.avaje.ebean.SqlRow;
 
 /**
  * Created by js on 19/04/16.
  */
 public class UserDAO {
 
-    private static ArrayList<User> usersDB;
+    private static ArrayList<User> usersDB ;
 
     public UserDAO() {
         usersDB = new ArrayList<User>();
+
+
     }
 
     public ArrayList<User> getUsersDB(){

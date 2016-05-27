@@ -6,26 +6,39 @@ package api_service.models;
 
 import api_service.models.Ride;
 import play.i18n.*;
+import javax.persistence.*;
+import play.data.validation.Constraints;
+import com.avaje.ebean.Model;
 
-
-public class User {
+@Entity
+public class User extends Model {
 
     private enum UserRoles {
         DRIVER, PASSENGER;
     }
 
+    public static Finder<String,User> find = new Finder<>(User.class);
+    @Constraints.Required
     private String name;
+
     private String email;
+    @Id
     private String schoolId;
+
     private String password;
+
     private String phoneNumber;
+
     private String neighborhood;
+
     private String street;
 
     private int vehicleSeats;
+
     private UserRoles role;
 
     private Ride departureRide;
+
     private Ride returnRide;
 
     public User(String name, String email,

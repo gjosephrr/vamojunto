@@ -3,21 +3,31 @@ package api_service.models;
 import api_service.models.User;
 import api_service.models.Ride;
 import play.i18n.*;
+import javax.persistence.*;
+import play.data.validation.Constraints;
+import com.avaje.ebean.Model;
 
 
 /**
  * Created by joseph on 19/04/16.
  */
-public class Solicitation {
+@Entity
+public class Solicitation extends Model{
 
+
+    public static Finder<String,Solicitation> find = new Finder<>(Solicitation.class);
     private enum Status {
         ACCEPTED, REFUSED, WAITING;
     }
-
+    @Constraints.Required
     private User passenger;
+    @Id
     private String responser_id;
+    @Constraints.Required
     private String ride_id;
+    @Constraints.Required
     private Ride ride;
+    @Constraints.Required
     private Status status;
 
     public Solicitation(User passenger, String responser_id, Ride ride) {
