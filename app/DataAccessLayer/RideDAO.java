@@ -18,9 +18,6 @@ public class RideDAO {
 
     public RideDAO(){
         ridesDB = new ArrayList<Ride>();
-        Ride newride = new Ride("123123","123123","123123","123123","123123",13213,123213);
-
-        System.out.println();
 
     }
 
