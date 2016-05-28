@@ -10,7 +10,7 @@ import javax.persistence.*;
 import play.data.validation.Constraints;
 import com.avaje.ebean.Model;
 
-@Entity
+@Entity( name = "iuser" )
 public class User extends Model {
 
     private enum UserRoles {
@@ -18,27 +18,27 @@ public class User extends Model {
     }
 
     public static Finder<String,User> find = new Finder<>(User.class);
-    @Constraints.Required
+    @Column
     private String name;
-
+    @Column
     private String email;
     @Id
     private String schoolId;
-
+    @Column
     private String password;
-
+    @Column
     private String phoneNumber;
-
+    @Column
     private String neighborhood;
-
+    @Column
     private String street;
-
+    @Column
     private int vehicleSeats;
-
+    @Column
     private UserRoles role;
-
+    @Column
     private Ride departureRide;
-
+    @Column
     private Ride returnRide;
 
     public User(String name, String email,

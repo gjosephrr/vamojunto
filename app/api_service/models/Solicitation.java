@@ -11,7 +11,7 @@ import com.avaje.ebean.Model;
 /**
  * Created by joseph on 19/04/16.
  */
-@Entity
+@Entity( name = "solicitation" )
 public class Solicitation extends Model{
 
 
@@ -19,15 +19,15 @@ public class Solicitation extends Model{
     private enum Status {
         ACCEPTED, REFUSED, WAITING;
     }
-    @Constraints.Required
+    @Column
     private User passenger;
-    @Id
+    @Column
     private String responser_id;
-    @Constraints.Required
+    @Column
     private String ride_id;
-    @Constraints.Required
+    @Column
     private Ride ride;
-    @Constraints.Required
+    @Column
     private Status status;
 
     public Solicitation(User passenger, String responser_id, Ride ride) {

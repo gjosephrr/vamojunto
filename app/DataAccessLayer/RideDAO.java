@@ -5,6 +5,8 @@ package DataAccessLayer;
  */
 import api_service.models.Ride;
 import api_service.models.User;
+import com.avaje.ebean.Ebean;
+import play.data.Form;
 
 import java.util.ArrayList;
 
@@ -12,8 +14,13 @@ public class RideDAO {
 
     private ArrayList<Ride> ridesDB;
 
+
+
     public RideDAO(){
         ridesDB = new ArrayList<Ride>();
+        Ride newride = new Ride("123123","123123","123123","123123","123123",13213,123213);
+
+        System.out.println();
 
     }
 

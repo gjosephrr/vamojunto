@@ -9,8 +9,8 @@ scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
   javaJdbc,
+  evolutions,
   cache,
   javaWs,
-  evolutions,
   "org.postgresql" % "postgresql" % "9.4-1206-jdbc4"
 )

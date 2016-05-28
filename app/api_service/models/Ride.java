@@ -14,7 +14,7 @@ import com.avaje.ebean.Model;
 /**
  * Created by joseph on 19/04/16.
  */
-@Entity
+@Entity( name = "ride" )
 public class Ride extends Model{
 
     // A CLASSE RIDE PRECISA TER TAMBÉM UM ATRIBUTO ROTA, PEGAMOS DA CLASSE ESTÁTICA CIDADE, O ARRAY CORRESPONDENTE AO
@@ -22,17 +22,17 @@ public class Ride extends Model{
 
     public static Model.Finder<String,Ride> find = new Model.Finder<>(Ride.class);
 
-    @Constraints.Required
+    @Column
     private String init_address;
-    @Constraints.Required
+    @Column
     private String departure_time;
-    @Constraints.Required
+    @Column
     private String final_address;
-    @Constraints.Required
+    @Column
     private String phoneNumber;
-    @Constraints.Required
+    @Column
     private String driver_id;
-    @Constraints.Required
+    @Column
     private int seats;
     @Id
     private int ride_id;
