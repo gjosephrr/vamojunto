@@ -33,8 +33,8 @@ public class ViewController extends Controller {
                     return login();
                 case "post login":
                     return postLogin();
-                case "en":
-                    return translate_en();
+                case "en-US":
+                    return translate_en_US();
                 case "pt-BR":
                     return translate_pt_BR();
 
@@ -56,14 +56,14 @@ public class ViewController extends Controller {
                         return login();
                     case "post login":
                         return postLogin();
-                    case "en":
-                        return translate_en();
+                    case "en-US":
+                        return translate_en_US();
                     case "pt-BR":
                         return translate_pt_BR();
                 }
             } else {
                 logoutUser();
-                String message = Messages.get("errors.token");
+                String message = Messages.get("errors.token.expired");
                 return index(message);
             }
         }
@@ -74,7 +74,7 @@ public class ViewController extends Controller {
         return ok(index.render(tokenMessage));
     }
 
-    public Result translate_en() {
+    public Result translate_en_US() {
         ctx().changeLang("en-US");
         return ok(index.render(null));
     }
@@ -138,7 +138,7 @@ public class ViewController extends Controller {
         // Get the submitted form data from the request object, and run validation.
         Form<LoginFormData> formData = Form.form(LoginFormData.class).bindFromRequest();
         if (formData.hasErrors()) {
-            String message = Messages.get("errors.incorret");
+            String message = Messages.get("errors.input.incorrect");
             flash("error", message);
             return badRequest(login.render("Login", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()), formData));
         }

@@ -1,72 +1,68 @@
 #
-# Messages (English)
+# Messages (US English)
 #
 
 # global
-global.welcome=Welcome to VamoJunto!
-global.not_signed_up=Not signed up yet?
-global.create_account=Create an account!
-global.school_id=School Id
-global.password=Password
-global.name=Name
-glabal.email=Email
-global.neighborhood=Neighborhood
-global.street=Street
-global.phone_number=Phone number
-global.number_of_available_seats=Number of available seats in your vehicle
-global.departure_neighborhood=Departure neighborhood
-global.arrival_neighborhood=Arrival neighborhood
-global.departure_time=Your departure time
-global.return_time=Your return time
-global.register=Register
+global.welcome = Welcome to VamoJunto!
+global.not_signed_up = Not signed up yet?
+global.create_account = Create an account!
+global.school_id = School Id
+global.password = Password
+global.name = Name
+global.email = Email
+global.neighborhood = Neighborhood
+global.street = Street
+global.phone_number = Phone number
+global.number_of_available_seats = Number of available seats in your vehicle
+global.departure_neighborhood = Departure neighborhood
+global.arrival_neighborhood = Arrival neighborhood
+global.departure_time = Your departure time
+global.return_time = Your return time
+global.register = Register
 
 # home
-home.sign_in=Sign in!
-home.language=Language:
-home.language.pt_br=Portuguese
-home.language.en_us=English
+home.sign_in = Sign in!
 
 # sign_up
-sign_up.title=Sign up
-sign_up.next=Next
-sign_up.signed_up=Already registered?
-sign_up.sign_in=Sign in
-sign_up.repeat_password=Repeat your password
-sign_up.back=Back
-sign_up.available_seats=If you are also a driver, enter the amount of available seats:
+sign_up.title = Sign up
+sign_up.next = Next
+sign_up.signed_up = Already registered?
+sign_up.sign_in = Sign in
+sign_up.repeat_password = Repeat your password
+sign_up.back = Back
+sign_up.available_seats = If you are also a driver, enter the amount of available seats:
 
-# sign_u.erros
-sign_up.erros.registrarion = Your registration data contains some errors:
-sign_up.erros.try_again = Try again
+# sign_up.errors
+sign_up.errors.registration = Your registration data contain some errors:
+sign_up.errors.try_again = Try again
 
 # main_page
-main_page.hello=Hello!
-main_page.my_travels=My travels
-main_page.requests=Requests
-main_page.no_travels=You still don''t have travels
-main_page.no_ride_request=You still don''t have any ride request
-main_page.notifications=Notifications
-main_page.depart_rides=Depart rides
-main_page.return_rides=Return rides
-main_page.new_travel=New travel
-main_page.new_travel.available_seats=Enter the amount of available seats:
-main_page.new_travel.exit=Exit
-main_page.driver=Driver:
-main_page.phone_number=Phone number:
+main_page.hello = Hello!
+main_page.my_travels = My travels
+main_page.requests = Requests
+main_page.no_travels = You still don''t have travels
+main_page.no_ride_request = You still don''t have any ride request
+main_page.notifications = Notifications
+main_page.depart_rides = Depart rides
+main_page.return_rides = Return rides
+main_page.new_travel = New travel
+main_page.new_travel.available_seats = Enter the amount of available seats:
+main_page.new_travel.exit = Exit
+main_page.driver = Driver:
+main_page.phone_number = Phone number:
 
 # api_controller
-errors.school_id = Invalid Registration, must have 9 or 7 characters, only numbers
-errors.school_id.occupied = This license is already included in our systems, please register with a different ID
-errors.phone = Invalid phone number, type a 9-digits number
-errors.password = Passwords do not match, please enter the same passwords
-
+errors.school_id.invalid = Invalid school Id, must have 9 or 7 characters, only numbers
+errors.school_id.taken = This school Id is already taken, please register with a different one
+errors.phone_number.invalid = Invalid phone number, type a 9-digits number
+errors.password.mismatch = Passwords do not match, please enter the same passwords
 
 # view_controller
-errors.incorret = Incorrect registration or password, try again
-errors.token = Your authentication token has expired, please login again
+errors.input.incorrect = Incorrect school Id or password, try again
+errors.token.expired = Your authentication token has expired, please login again
 
 # user
-user.toString = Name: {0} \nSchool id:  {1} \nRole:  {2} \nNeighhood:  {3}
+user.toString = Name: {0} \nSchool Id:  {1} \nRole:  {2} \nNeighborhood:  {3}
 
 # solicitation
 solicitation.name = Name: {0} \n
@@ -75,4 +71,4 @@ solicitation.time = Time: {0} \n
 solicitation.toString = Driver:  {0} \nPassenger:  + {1}
 
 # ride
-ride.toString = Driver:  {0} \nLeaves:  {1}
+ride.toString = Driver:  {0} \nDeparts from:  {1}

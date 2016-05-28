@@ -26,6 +26,6 @@ POST    /login                      controllers.ViewController.mainDecoder(metho
 GET     /logout                     controllers.ViewController.logoutUser()
 
 # TRANSLATING
-GET     /en                         controllers.ViewController.mainDecoder(method = "en")
+GET     /en_US                      controllers.ViewController.mainDecoder(method = "en-US")
 
 GET     /pt_BR                      controllers.ViewController.mainDecoder(method = "pt-BR")

@@ -79,23 +79,23 @@ public class APIController extends Controller{
             (schoolId.length() != 9 && schoolId.length() != 7) ||
             !schoolId.matches("\\d+")){
             System.out.println(schoolId.length() != 9);
-            String err = Messages.get("errors.school_id");
-            errors.add(err);
+            String error = Messages.get("errors.school_id.invalid");
+            errors.add(error);
         }
 
         if(UserDAO.isUser(schoolId)){
-            String err = Messages.get("errors.school_id.occupied");
-            errors.add(err);
+            String error = Messages.get("errors.school_id.taken");
+            errors.add(error);
         }
 
         if(phoneNumber == null || phoneNumber.length() != 9 || !phoneNumber.matches("\\d+")){
-            String err = Messages.get("errors.phone");
-            errors.add(err);
+            String error = Messages.get("errors.phone_number.invalid");
+            errors.add(error);
         }
 
         if(password1 == null || password2 == null || !password1.equals(password2)){
-            String err = Messages.get("errors.password");
-            errors.add(err);
+            String error = Messages.get("errors.password.mismatch");
+            errors.add(error);
         }
 
         if(errors.size() > 0)
